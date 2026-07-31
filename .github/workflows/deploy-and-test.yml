@@ -1,0 +1,51 @@
+name: Selenium Web E2E Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: Automation_Framework/Selenium_Web/package.json
+
+      - name: Install Dependencies
+        run: |
+          cd Automation_Framework/Selenium_Web
+          npm install
+
+      - name: Wait for GitHub Pages Deployment
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'pages build and deployment'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - name: Run WebdriverIO Tests
+        run: |
+          cd Automation_Framework/Selenium_Web
+          npm run wdio
+        env:
+          BASE_URL: https://shanmukhi22.github.io/Nailvital/
+
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: selenium-test-reports
+          path: Automation_Framework/Selenium_Web/reports/
+          retention-days: 30

@@ -1,0 +1,15 @@
+{
+  "name": "selenium-web-automation",
+  "version": "1.0.0",
+  "description": "Selenium E2E tests using WebdriverIO",
+  "main": "index.js",
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "@wdio/cli": "^8.0.0",
+    "@wdio/local-runner": "^8.0.0",
+    "@wdio/mocha-framework": "^8.0.0",
+    "@wdio/spec-reporter": "^8.0.0"
+  }
+}
