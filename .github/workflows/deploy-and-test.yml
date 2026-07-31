@@ -49,3 +49,11 @@ jobs:
           name: selenium-test-reports
           path: Automation_Framework/Selenium_Web/reports/
           retention-days: 30
+
+      - name: Upload Excel Test Cases
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-cases-excel
+          path: Test_Cases_Excel/
+          retention-days: 30
