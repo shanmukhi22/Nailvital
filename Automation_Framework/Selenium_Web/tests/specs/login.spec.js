@@ -1,24 +1,17 @@
 const LoginPage = require('../pageobjects/login.page');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+describe('Login Authentication Verification', () => {
+    it('TC_WEB_AUTH_001 - should login with valid credentials and show dashboard', async () => {
         await LoginPage.open();
         
-        await LoginPage.login('testuser', 'SuperSecretPassword!');
+        // Wait for login form to be visible (in case it takes time to render or display)
+        await LoginPage.inputEmail.waitForDisplayed({ timeout: 5000 });
         
-        // Assert that URL changed or some authenticated element is visible
-        const currentUrl = await browser.getUrl();
-        expect(currentUrl).not.toContain('login');
-    });
-
-    it('should show error with invalid credentials', async () => {
-        await LoginPage.open();
+        // Fill form and click sign in
+        await LoginPage.login('gummaramsrinivas2004@gmail.com', 'SecurePassword123!');
         
-        await LoginPage.login('wronguser', 'wrongpass');
-        
-        // In a real app, you would assert an error message here.
-        // const errorMsg = await $('#error-message');
-        // await expect(errorMsg).toBeExisting();
-        // await expect(errorMsg).toHaveTextContaining('Invalid credentials');
+        // After clicking login, it should navigate to home and display the username
+        // (Note: Since it's client-side JS, we just wait for the home screen element)
+        await expect(LoginPage.homeUserName).toBeExisting();
     });
 });
