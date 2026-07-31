@@ -11,5 +11,8 @@
     "@wdio/local-runner": "^8.0.0",
     "@wdio/mocha-framework": "^8.0.0",
     "@wdio/spec-reporter": "^8.0.0"
+  },
+  "devDependencies": {
+    "@wdio/junit-reporter": "^9.29.1"
   }
 }

@@ -20,7 +20,15 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['junit', {
+            outputDir: './reports',
+            outputFileFormat: function(options) {
+                return `results-${options.cid}.xml`
+            }
+        }]
+    ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
