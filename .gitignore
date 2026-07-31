@@ -9,5 +9,7 @@ app/build/
 local.properties
 __pycache__/
 *.pyc
-ml_models/dataset/
-ml_models/weights/
+**/dataset/
+**/weights/
+*.zip
+*.tflite

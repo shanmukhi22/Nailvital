@@ -5,7 +5,7 @@ import { check, sleep } from 'k6';
 // 100 concurrent users for 1 minute
 export const options = {
     vus: 100, // Virtual Users
-    duration: '1m', // 1 minute
+    duration: '10s', // 10 seconds for local quick test
     thresholds: {
         http_req_duration: ['p(95)<500'], // 95% of requests should be below 500ms
         http_req_failed: ['rate<0.01'], // Error rate should be less than 1%

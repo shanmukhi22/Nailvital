@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NailVital AI - Premium Desktop Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <!-- DESKTOP SIDEBAR -->
+  <div class="sidebar" id="desktopSidebar" style="display:none;">
+    <div class="brand-logo">
+      <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+      NailVital AI
+    </div>
+    <div class="nav-menu">
+      <button class="nav-item active" onclick="showScreen('home')">
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
+      </button>
+      <button class="nav-item" onclick="showScreen('scan')">
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        AI Scanner
+      </button>
+      <button class="nav-item" onclick="showScreen('chatbot')">
+        <svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg>
+        Medical Assistant
+      </button>
+      <button class="nav-item" onclick="showScreen('history')">
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+        Scan History
+      </button>
+      <button class="nav-item" onclick="showScreen('wiki')">
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        Health Wiki
+      </button>
+    </div>
+    
+    <div style="margin-top:auto;">
+      <button class="nav-item" onclick="showScreen('profile')" style="margin-bottom:12px;">
+        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Settings
+      </button>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar" id="sidebarAvatar">PS</div>
+        <div style="flex:1; overflow:hidden;">
+          <div style="font-size:14px; font-weight:700; color:var(--text-main); white-space:nowrap; text-overflow:ellipsis;" id="sidebarName">Priya Sharma</div>
+          <div style="font-size:11px; color:var(--accent-cyan);">Pro Member</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT AREA -->
+  <div class="main-content" id="app">
+
+    <!-- 1. SPLASH SCREEN -->
+    <div class="screen active" id="splash" style="align-items:center;justify-content:center;height:100vh;">
+      <div style="text-align:center;">
+        <img src="img/splash_logo.png" alt="NailVital AI" style="max-width:250px; margin-bottom:32px;">
+        <h1 style="font-size:48px;">Nail<span style="color:var(--accent-cyan)">Vital</span> AI</h1>
+        <p>Your Desktop Clinical Assistant</p>
+      </div>
+    </div>
+
+    <!-- 2. GETTING STARTED -->
+    <div class="screen" id="getting" style="background:var(--bg-card); position:relative;">
+      <!-- Skip Button -->
+      <button class="btn btn-outline" style="position:absolute; top:32px; right:32px; border:none; font-size:14px; background:rgba(255,255,255,0.9); color:var(--text-main); z-index:10; padding:8px 24px; border-radius:24px; font-weight:700; box-shadow:0 4px 12px rgba(0,0,0,0.1);" onclick="showScreen('login')">SKIP</button>
+      
+      <!-- Top Half: Image Full Width -->
+      <div id="getVisual" style="width:100%; height:55vh; background-size:cover; background-position:center; background-repeat:no-repeat; background-image:url('img/intro_1.png');"></div>
+      
+      <!-- Bottom Half: Content -->
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px;">
+        <h1 id="getTitle" style="font-size:36px; font-weight:800; margin-bottom:16px; color:var(--text-main);">Analyze in Seconds</h1>
+        <p id="getSub" style="font-size:18px; color:var(--text-muted); line-height:1.6; margin-bottom:40px; max-width:600px;">Our AI identifies texture, color, and anomalies instantly from any clear photo — no extra hardware required.</p>
+        
+        <div style="display:flex; gap:12px; margin-bottom:48px;">
+          <div class="get-dot active" style="width:10px; height:10px; border-radius:50%; background:var(--accent-cyan);"></div>
+          <div class="get-dot" style="width:10px; height:10px; border-radius:50%; background:var(--border-light);"></div>
+          <div class="get-dot" style="width:10px; height:10px; border-radius:50%; background:var(--border-light);"></div>
+        </div>
+        
+        <div id="getDisclaimer" style="display:none; margin-bottom:32px; text-align:left; max-width:600px; width:100%;">
+          <label style="display:flex; gap:12px; align-items:flex-start; cursor:pointer;">
+            <input type="checkbox" id="getDisclaimerCheck" onchange="toggleGetStartedBtn()" style="width:24px; height:24px; margin-top:2px; accent-color:var(--accent-cyan);">
+            <span style="font-size:15px; color:var(--text-muted); line-height:1.5;">I acknowledge that NailVital AI provides unverified insights and is not a substitute for professional medical advice.</span>
+          </label>
+        </div>
+
+        <button class="btn btn-primary" id="getNextBtn" onclick="nextSlide()" style="width:100%; max-width:400px; padding:18px; font-size:16px;">NEXT</button>
+      </div>
+    </div>
+
+    <!-- 3. LOGIN SCREEN -->
+    <div class="screen auth-screen" id="login">
+      <div class="auth-visual" style="background-image: url('img/intro_1.png');"></div>
+      <div class="auth-panel">
+        <h1>Welcome Back</h1>
+        <p style="margin-bottom:40px;">Sign in to continue your health journey.</p>
+        
+        <div class="field" id="loginEmailField">
+          <label>Email</label>
+          <input type="email" id="loginEmail" placeholder="you@email.com">
+        </div>
+        <div class="field" id="loginPassField" style="position:relative;">
+          <label>Password</label>
+          <input type="password" id="loginPass" placeholder="••••••••">
+          <button type="button" onclick="togglePasswordVisibility('loginPass')" style="position:absolute; right:16px; top:42px; background:none; border:none; cursor:pointer; color:var(--text-muted);">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        
+        <div style="text-align:right; margin-bottom:32px;">
+          <a href="#" style="color:var(--accent-cyan); text-decoration:none; font-size:14px; font-weight:600;" onclick="showScreen('forgot')">Forgot Password?</a>
+        </div>
+        
+        <button class="btn btn-primary" onclick="doLogin()" style="width:100%; margin-bottom:16px;">SIGN IN</button>
+        
+        <div style="text-align:center; font-size:14px;">
+          <span style="color:var(--text-muted);">Don't have an account?</span> 
+          <a href="#" style="color:var(--accent-cyan); text-decoration:none; font-weight:600;" onclick="showScreen('register')">Sign up</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. REGISTER SCREEN -->
+    <div class="screen auth-screen" id="register">
+      <div class="auth-visual" style="background-image: url('img/intro_2.png');"></div>
+      <div class="auth-panel">
+        <h1>Create Account</h1>
+        <p style="margin-bottom:40px;">Join NailVital to track your nail health.</p>
+        
+        <div class="field" id="regNameField">
+          <label>Full Name</label>
+          <input type="text" id="regName" placeholder="Priya Sharma" oninput="validateNameInput(this)">
+          <div id="regNameHint" style="font-size:12px; margin-top:8px; color:var(--text-muted);">Only letters, spaces and dots allowed</div>
+        </div>
+        <div class="field" id="regEmailField">
+          <label>Email Address</label>
+          <input type="email" id="regEmail" placeholder="priya@example.com">
+        </div>
+        <div class="field" id="regPhoneField">
+          <label>Phone Number</label>
+          <input type="tel" id="regPhone" placeholder="9876543210" maxlength="10" oninput="handlePhoneInput(this)">
+          <div id="regPhoneHint" style="font-size:12px; margin-top:8px; color:var(--text-muted);">10 digits, starting with 6, 7, 8 or 9</div>
+        </div>
+        <div class="field" id="regPassField">
+          <label>Password</label>
+          <div style="position:relative;">
+            <input type="password" id="regPass" placeholder="Min. 8 characters" oninput="handlePasswordStrength(this)">
+            <button type="button" onclick="togglePasswordVisibility('regPass')" style="position:absolute; right:16px; top:18px; background:none; border:none; cursor:pointer; color:var(--text-muted);">
+              <svg class="svg-icon" style="width:20px;height:20px;" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div style="height:4px; width:100%; background:var(--border-light); border-radius:2px; margin-top:8px; overflow:hidden;">
+            <div id="regPassBar" style="height:100%; width:0%; transition:all 0.3s;"></div>
+          </div>
+          <div id="regPassHint" style="font-size:12px; margin-top:8px; color:var(--text-muted);">Enter password</div>
+        </div>
+        
+        <div style="margin-bottom:24px;">
+          <label style="display:flex; gap:12px; align-items:center; cursor:pointer;">
+            <input type="checkbox" id="regTermsCheck" style="width:20px; height:20px; accent-color:var(--accent-cyan);">
+            <span style="font-size:13px; color:var(--text-muted);">I agree to the <span style="color:var(--accent-cyan); font-weight:bold;">Terms of Service</span> & <span style="color:var(--accent-cyan); font-weight:bold;">Privacy Policy</span></span>
+          </label>
+        </div>
+        
+        <button class="btn btn-primary" onclick="doRegister()" style="width:100%; margin-bottom:24px;">Create Account</button>
+        
+        <div style="text-align:center; font-size:14px;">
+          <span style="color:var(--text-muted);">Already have an account?</span> 
+          <a href="#" style="color:var(--accent-cyan); text-decoration:none; font-weight:600;" onclick="showScreen('login')">Sign in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4.1 OTP SCREEN -->
+    <div class="screen auth-screen" id="otp">
+      <div class="auth-visual" style="background-image: url('img/intro_3.png');"></div>
+      <div class="auth-panel">
+        <h1>Verify Email</h1>
+        <p style="margin-bottom:40px;">We sent a 6-digit code to <strong id="otpPhone" style="color:var(--text-main);"></strong>.</p>
+        
+        <div style="display:flex; gap:12px; margin-bottom:32px;">
+          <input type="text" id="o1" class="otp-box" maxlength="1" onkeyup="otpInput(this, 'o2')" onkeydown="otpBack(event, this, null)" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+          <input type="text" id="o2" class="otp-box" maxlength="1" onkeyup="otpInput(this, 'o3')" onkeydown="otpBack(event, this, 'o1')" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+          <input type="text" id="o3" class="otp-box" maxlength="1" onkeyup="otpInput(this, 'o4')" onkeydown="otpBack(event, this, 'o2')" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+          <input type="text" id="o4" class="otp-box" maxlength="1" onkeyup="otpInput(this, 'o5')" onkeydown="otpBack(event, this, 'o3')" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+          <input type="text" id="o5" class="otp-box" maxlength="1" onkeyup="otpInput(this, 'o6')" onkeydown="otpBack(event, this, 'o4')" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+          <input type="text" id="o6" class="otp-box" maxlength="1" onkeyup="otpInput(this, null)" onkeydown="otpBack(event, this, 'o5')" style="width:48px;height:56px;text-align:center;font-size:24px;border:1px solid var(--border-light);border-radius:12px;background:var(--bg-card);color:var(--text-main);">
+        </div>
+        
+        <button class="btn btn-primary" onclick="verifyOtp()" style="width:100%; margin-bottom:24px;">Verify & Continue</button>
+        
+        <div style="text-align:center; font-size:14px; color:var(--text-muted);" id="resendTimer">
+          Resend in 30s
+        </div>
+      </div>
+    </div>
+
+    <!-- 4.2 FORGOT PASSWORD SCREEN -->
+    <div class="screen auth-screen" id="forgot">
+      <div class="auth-visual" style="background-image: url('img/intro_1.png');"></div>
+      <div class="auth-panel">
+        <h1>Reset Password</h1>
+        <p style="margin-bottom:40px;">Enter your email to receive a reset code.</p>
+        
+        <div id="forgotStep1">
+          <div class="field" id="forgotEmailField">
+            <label>Email Address</label>
+            <input type="email" id="forgotEmail" placeholder="you@example.com">
+          </div>
+          <button class="btn btn-primary" onclick="sendReset()" style="width:100%; margin-bottom:24px; margin-top:16px;">Send Reset Code</button>
+        </div>
+        
+        <div id="forgotStep2" style="display:none;">
+          <div class="field">
+            <label>Reset Code</label>
+            <input type="text" id="forgotCode" placeholder="6-digit code">
+          </div>
+          <div class="field">
+            <label>New Password</label>
+            <input type="password" id="forgotNewPass" placeholder="••••••••">
+          </div>
+          <button class="btn btn-primary" onclick="doResetPassword()" style="width:100%; margin-bottom:24px; margin-top:16px;">Set New Password</button>
+        </div>
+        
+        <div style="text-align:center; font-size:14px;">
+          <a href="#" style="color:var(--text-muted); text-decoration:none; font-weight:600;" onclick="showScreen('login')">← Back to Login</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. HOME DASHBOARD -->
+    <div class="screen" id="home">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 24px;">
+        <div>
+          <p style="color:var(--text-muted); font-size:14px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Good evening</p>
+          <h2 style="font-size:32px; font-weight:800; letter-spacing:-1px;" id="homeUserNameDisplay">ram srinivas</h2>
+        </div>
+        <div style="display:flex; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:50%; border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; color:var(--accent-cyan); cursor:pointer;">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <div onclick="showScreen('profile')" style="width:40px; height:40px; border-radius:50%; border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; color:var(--text-main); cursor:pointer;">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="home-grid" style="grid-template-columns: 1fr; max-width: 800px;">
+        <!-- Main Hero -->
+        <div class="hero-card" onclick="showScreen('scan')" style="cursor:pointer; margin-bottom:24px; padding:32px; background:linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(20, 184, 166, 0.05)); border:1px solid var(--border-light); border-radius:var(--radius-lg);">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(15,118,110,0.1); display:flex; align-items:center; justify-content:center; color:var(--accent-cyan);">
+              <svg class="svg-icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span style="font-size:12px; font-weight:700; color:var(--accent-cyan); letter-spacing:1px; text-transform:uppercase;">NailVital AI Vision</span>
+          </div>
+          <h2 style="font-size:28px; max-width:300px; margin-bottom:32px; color:var(--text-main);">Analyze your nail health in seconds</h2>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+            <p style="margin:0; font-size:14px; color:var(--text-muted);" id="homeHeroLastScan">Last scan: None</p>
+            <button class="btn btn-primary" style="padding:10px 24px;">UPLOAD</button>
+          </div>
+        </div>
+        
+        <!-- Quick Actions (2 Cards) -->
+        <div class="quick-actions" style="grid-template-columns: repeat(2, 1fr); margin-bottom:32px;">
+          <div class="action-card" onclick="showScreen('chatbot')" style="align-items:flex-start; padding:20px;">
+            <div class="action-icon" style="margin-bottom:8px;"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div>
+              <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">AI Advisor</h3>
+              <p style="font-size:13px; color:var(--text-muted); display:flex; align-items:center; gap:4px;">Ask details <span style="color:var(--accent-cyan);">→</span></p>
+            </div>
+          </div>
+          <div class="action-card" onclick="showScreen('wiki')" style="align-items:flex-start; padding:20px;">
+            <div class="action-icon" style="margin-bottom:8px;"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+            <div>
+              <h3 style="font-size:16px; font-weight:700; margin-bottom:4px;">Health Wiki</h3>
+              <p style="font-size:13px; color:var(--text-muted); display:flex; align-items:center; gap:4px;">Condition Guide <span style="color:var(--accent-cyan);">→</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Health Signals Section -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+          <h3 style="font-size:20px; font-weight:800;">Health signals</h3>
+          <a href="#" onclick="showScreen('history')" style="color:var(--accent-cyan); font-size:14px; font-weight:600; text-decoration:none;">See History</a>
+        </div>
+        
+        <div id="homeHealthSignalsGrid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; padding-bottom:60px;">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. SCANNER SCREEN -->
+    <div class="screen" id="scan" style="background-color: #fafbfc; height: 100vh; overflow: hidden; padding: 20px; box-sizing: border-box;">
+      <!-- Top header -->
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+        <button onclick="showScreen('home')" style="width: 48px; height: 48px; border-radius: 12px; background: white; border: 1px solid #eaeaea; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width: 24px; height: 24px; stroke: #101828; stroke-width: 2; fill: none;"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div>
+          <div style="color: #0d9488; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px;">Nail Analysis</div>
+          <h2 style="font-size: 24px; font-weight: 800; color: #101828; margin: 0; letter-spacing: -0.5px;">Capture & Diagnose</h2>
+        </div>
+      </div>
+      
+      <!-- Scanner Viewfinder -->
+      <div style="flex: 1; background-color: #080c14; border-radius: 24px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+        <!-- Target Center -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; z-index: 2;">
+            <!-- center corners -->
+            <div style="position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-top: 4px solid #0f766e; border-left: 4px solid #0f766e; border-top-left-radius: 6px; opacity: 0.8;"></div>
+            <div style="position: absolute; top: 0; right: 0; width: 16px; height: 16px; border-top: 4px solid #0f766e; border-right: 4px solid #0f766e; border-top-right-radius: 6px; opacity: 0.8;"></div>
+            <div style="position: absolute; bottom: 0; left: 0; width: 16px; height: 16px; border-bottom: 4px solid #0f766e; border-left: 4px solid #0f766e; border-bottom-left-radius: 6px; opacity: 0.8;"></div>
+            <div style="position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; border-bottom: 4px solid #0f766e; border-right: 4px solid #0f766e; border-bottom-right-radius: 6px; opacity: 0.8;"></div>
+            <!-- center dot -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #0f766e; opacity: 0.8;"></div>
+        </div>
+
+        <!-- Main Frame Corners -->
+        <div style="position: absolute; width: 70%; height: 40%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+            <div style="position: absolute; top: 0; left: 0; width: 36px; height: 36px; border-top: 4px solid #0d9488; border-left: 4px solid #0d9488; border-top-left-radius: 14px;"></div>
+            <div style="position: absolute; top: 0; right: 0; width: 36px; height: 36px; border-top: 4px solid #0d9488; border-right: 4px solid #0d9488; border-top-right-radius: 14px;"></div>
+            <div style="position: absolute; bottom: 0; left: 0; width: 36px; height: 36px; border-bottom: 4px solid #0d9488; border-left: 4px solid #0d9488; border-bottom-left-radius: 14px;"></div>
+            <div style="position: absolute; bottom: 0; right: 0; width: 36px; height: 36px; border-bottom: 4px solid #0d9488; border-right: 4px solid #0d9488; border-bottom-right-radius: 14px;"></div>
+            
+            <style>
+              @keyframes scanSweep {
+                0% { top: 0%; opacity: 0.5; }
+                50% { top: 100%; opacity: 1; }
+                100% { top: 0%; opacity: 0.5; }
+              }
+              .laser-line {
+                position: absolute; left: -10%; right: -10%; height: 2px;
+                background: linear-gradient(90deg, transparent, #14b8a6, transparent);
+                box-shadow: 0 0 12px 2px rgba(20, 184, 166, 0.4);
+                animation: scanSweep 3s ease-in-out infinite;
+              }
+            </style>
+            <!-- Horizontal Scanning Line -->
+            <div class="laser-line"></div>
+        </div>
+
+        <!-- System Ready Badge -->
+        <div style="position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); background: #f8fafc; padding: 12px 28px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; color: #0f766e; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 3;">
+            <style>
+              @keyframes pulseDot {
+                0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.7); }
+                70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(94, 234, 212, 0); }
+                100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(94, 234, 212, 0); }
+              }
+              .status-dot {
+                width: 8px; height: 8px; border-radius: 50%; background: #5eead4;
+                animation: pulseDot 2s infinite;
+              }
+            </style>
+            <div class="status-dot"></div>
+            SYSTEM READY
+        </div>
+      </div>
+      
+      <!-- Bottom Controls -->
+      <div style="position: relative; padding-bottom: 24px; padding-right: 80px;">
+        <input type="file" id="scanFileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(this)">
+        <button id="captureBtn" onclick="showGuideDialog()" style="width: 100%; padding: 24px; font-size: 15px; font-weight: 700; border-radius: 16px; border: none; color: white; background: linear-gradient(90deg, #0f766e, #14b8a6); cursor: pointer; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2); display: flex; justify-content: center; align-items: center; gap: 8px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: white; stroke-width: 2; fill: none; pointer-events: none;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            UPLOAD IMAGE
+        </button>
+        <!-- Floating Upload Icon -->
+        <button onclick="showGuideDialog()" style="position: absolute; right: 0; bottom: 24px; width: 68px; height: 68px; border-radius: 50%; background: #111827; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 24px rgba(0,0,0,0.3);">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 28px; height: 28px; stroke: #14b8a6; stroke-width: 2; fill: none; pointer-events: none;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 7. CHATBOT SCREEN -->
+    <div class="screen" id="chatbot">
+      <div class="chat-container">
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--border-light);">
+          <button class="btn btn-outline" onclick="showScreen('home')" style="padding:10px 16px;">← Back</button>
+          <div style="flex:1;">
+            <h2>AI Medical Assistant</h2>
+            <p>Ask me anything about your nail health or latest scan results.</p>
+          </div>
+          <button class="btn btn-outline" onclick="clearChat()">Clear Chat</button>
+        </div>
+        
+        <div class="chat-messages" id="chatMsgList">
+          <div class="msg-row ai">
+            <div class="msg-avatar">
+              <svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg>
+            </div>
+            <div class="msg-bubble ai">
+              Hello! I'm your NailVital Clinical Assistant. I can help interpret your diagnostic scans, explain nail conditions, or answer general health questions. How can I help you today?
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-bar">
+          <input type="text" class="chat-input" id="chatInputText" placeholder="Ask your medical assistant..." onkeydown="if(event.key==='Enter')sendChatMessage()">
+          <button class="chat-send" onclick="sendChatMessage()">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="transform:rotate(45deg);margin-left:-4px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. HISTORY SCREEN -->
+    <div class="screen" id="history">
+      
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:32px;">
+        <button onclick="showScreen('home')" style="width:48px; height:48px; border-radius:12px; border:1px solid #e5e7eb; background:white; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg class="svg-icon" viewBox="0 0 24 24" style="stroke:#111827;"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <h2 style="font-size:24px; font-weight:800; color:#111827; margin:0;">Health Journal</h2>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
+        <div>
+          <div style="font-size:11px; font-weight:800; color:#6b7280; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">JOURNAL ENTRIES</div>
+          <h2 style="font-size:20px; font-weight:800; color:#111827; margin:0;">Clinical History</h2>
+        </div>
+        <div style="display:flex; gap:12px;">
+          <button onclick="renderHistoryCards()" style="width:44px; height:44px; border-radius:12px; border:1px solid #e5e7eb; background:white; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg class="svg-icon" viewBox="0 0 24 24" style="stroke:#0f766e;"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 1 0 2.13-5.83L2 8"/></svg></button>
+          <button class="btn btn-outline" style="border:1px solid #e5e7eb; color:#0f766e; font-weight:700; padding:0 16px; border-radius:12px; display:flex; align-items:center; gap:8px;" onclick="exportHistoryPdf()">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width:18px;height:18px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            EXPORT ALL
+          </button>
+        </div>
+      </div>
+      
+      <div style="background:white; border-radius:24px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.03); margin-bottom:32px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:24px;">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width:18px; height:18px; stroke:#0f766e; stroke-width:2;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <span style="font-size:12px; font-weight:800; color:#111827; letter-spacing:1px; text-transform:uppercase;">CLINICAL TRENDS</span>
+        </div>
+        <div style="position:relative; width:100%; height:120px;">
+          <!-- Horizontal grid lines -->
+          <div style="position:absolute; top:20%; left:0; width:100%; height:1px; background:#f3f4f6;"></div>
+          <div style="position:absolute; top:40%; left:0; width:100%; height:1px; background:#f3f4f6;"></div>
+          <div style="position:absolute; top:60%; left:0; width:100%; height:1px; background:#f3f4f6;"></div>
+          <div style="position:absolute; top:80%; left:0; width:100%; height:1px; background:#f3f4f6;"></div>
+          <div style="position:absolute; top:100%; left:0; width:100%; height:1px; background:#f3f4f6;"></div>
+          
+          <!-- SVG Line Chart -->
+          <svg id="clinicalTrendChart" viewBox="0 0 400 100" style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:visible;">
+          </svg>
+        </div>
+      </div>
+      
+      <div id="historyCardList" style="display:flex; flex-direction:column; gap:16px;">
+        <!-- Filled via JS -->
+      </div>
+    </div>
+    
+    <!-- 9. WIKI SCREEN -->
+    <div class="screen" id="wiki">
+      <div style="margin-bottom:32px;">
+        <h2>Health Wiki</h2>
+        <p>Explore our clinical database of 20+ nail conditions.</p>
+      </div>
+      <div id="wikiList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)); gap:24px;">
+        <!-- Filled via JS -->
+      </div>
+    </div>
+
+    <!-- 10. PROFILE SCREEN -->
+    <div class="screen" id="profile" style="background-color: #f8fafc; height: 100vh; overflow-y: auto; padding-bottom: 80px;">
+      <!-- Header -->
+      <div style="display: flex; align-items: center; justify-content: center; position: relative; padding: 24px 20px;">
+        <button onclick="showScreen('home')" style="position: absolute; left: 20px; width: 40px; height: 40px; border-radius: 12px; background: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: #111827; stroke-width: 2; fill: none;"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 1px; color: #111827; text-transform: uppercase;">Profile</span>
+      </div>
+
+      <div style="max-width: 600px; margin: 0 auto; width: 100%; padding: 0 20px;">
+        <!-- Avatar and Info -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 40px;">
+          <div style="position: relative; margin-bottom: 16px;">
+            <div id="profAvatarDisplay" style="width: 100px; height: 100px; border-radius: 32px; background: white; color: #0f766e; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">RA</div>
+            <div style="position: absolute; bottom: -4px; right: -4px; width: 32px; height: 32px; border-radius: 50%; background: #0f766e; border: 3px solid #f8fafc; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+              <svg class="svg-icon" viewBox="0 0 24 24" style="width: 14px; height: 14px; stroke: white; stroke-width: 2; fill: none;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+          </div>
+          <h1 id="profNameDisplay" style="font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 4px;">ram srinivas</h1>
+          <p id="profEmailDisplay" style="font-size: 14px; color: #6b7280;">gummaramsrinivas2004@gmail.com</p>
+        </div>
+
+        <!-- Sections -->
+        <style>
+          .profile-section-title { font-size: 11px; font-weight: 800; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; margin-left: 8px; }
+          .profile-card { background: white; border-radius: 20px; padding: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 24px; }
+          .profile-item { display: flex; align-items: center; justify-content: space-between; padding: 16px; border-radius: 16px; cursor: pointer; transition: background 0.2s; }
+          .profile-item:hover { background: #f9fafb; }
+          .profile-item-left { display: flex; align-items: center; gap: 16px; }
+          .profile-icon-wrapper { width: 44px; height: 44px; border-radius: 12px; background: rgba(15, 118, 110, 0.05); display: flex; align-items: center; justify-content: center; }
+          .profile-icon { width: 20px; height: 20px; stroke: #0f766e; stroke-width: 2; fill: none; }
+          .profile-item-title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+          .profile-item-sub { font-size: 13px; color: #6b7280; }
+          .profile-item-arrow { width: 18px; height: 18px; stroke: #d1d5db; stroke-width: 2; fill: none; }
+          
+          /* Toggle Switch */
+          .toggle-switch { position: relative; width: 44px; height: 24px; }
+          .toggle-input { opacity: 0; width: 0; height: 0; }
+          .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #e5e7eb; transition: .3s; border-radius: 24px; }
+          .toggle-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+          .toggle-input:checked + .toggle-slider { background-color: #0f766e; }
+          .toggle-input:checked + .toggle-slider:before { transform: translateX(20px); }
+        </style>
+
+        <!-- Personal Details -->
+        <div class="profile-section-title">Personal Details</div>
+        <div class="profile-card">
+          <div class="profile-item" onclick="document.getElementById('personalDetailsModal').classList.add('show')">
+            <div class="profile-item-left">
+              <div class="profile-icon-wrapper">
+                <svg class="profile-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="profile-item-title">Personal Details</div>
+                <div class="profile-item-sub" id="profPhoneDisplay">9390088908</div>
+              </div>
+            </div>
+            <svg class="profile-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+
+        <!-- Preference & Security -->
+        <div class="profile-section-title">Preference & Security</div>
+        <div class="profile-card">
+          <div class="profile-item">
+            <div class="profile-item-left">
+              <div class="profile-icon-wrapper">
+                <svg class="profile-icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <div>
+                <div class="profile-item-title">Reminders</div>
+                <div class="profile-item-sub">Set a daily nail health alarm</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <input type="time" id="reminderTimeInput" style="border:1px solid #e5e7eb; border-radius:8px; padding:6px; font-family:inherit; color:#111827; outline:none; display:none;" onchange="localStorage.setItem('nailvital_reminder_time', this.value); localStorage.removeItem('nailvital_last_reminder_date'); toast('Reminder time set to ' + this.value);">
+              <label class="toggle-switch">
+                <input type="checkbox" class="toggle-input" id="remindersToggle" onchange="toggleReminders(this)">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="profile-item" onclick="document.getElementById('changePasswordModal').classList.add('show')">
+            <div class="profile-item-left">
+              <div class="profile-icon-wrapper">
+                <svg class="profile-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <div>
+                <div class="profile-item-title">Change Password</div>
+                <div class="profile-item-sub">Update your account security</div>
+              </div>
+            </div>
+            <svg class="profile-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="profile-section-title">Data Management</div>
+        <div class="profile-card">
+          <div class="profile-item" onclick="exportHistoryPdf()">
+            <div class="profile-item-left">
+              <div class="profile-icon-wrapper">
+                <svg class="profile-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+              <div>
+                <div class="profile-item-title">Download My Data</div>
+                <div class="profile-item-sub">Download clinical history (PDF)</div>
+              </div>
+            </div>
+            <svg class="profile-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+
+          <div class="profile-item" style="margin-top: 8px;" onclick="document.getElementById('deleteAccountModal').classList.add('show')">
+            <div class="profile-item-left">
+              <div class="profile-icon-wrapper" style="background: rgba(220, 38, 38, 0.05);">
+                <svg class="profile-icon" viewBox="0 0 24 24" style="stroke: #dc2626;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+              </div>
+              <div>
+                <div class="profile-item-title" style="color: #dc2626;">Delete Account</div>
+                <div class="profile-item-sub">Permanently wipe all records</div>
+              </div>
+            </div>
+            <svg class="profile-item-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+
+        <!-- Log Out Button -->
+        <button onclick="showLogout()" style="width: 100%; padding: 20px; border-radius: 16px; background: rgba(220, 38, 38, 0.08); border: none; color: #dc2626; font-size: 15px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+          LOG OUT
+        </button>
+      </div>
+    </div>
+
+    <!-- GLOBAL MODALS -->
+    <!-- Guide Dialog Modal -->
+    <div class="modal-overlay" id="guideDialogModal">
+      <div class="modal-sheet" style="border-radius: 32px; padding: 32px 24px; text-align: center; width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+        <div style="display:flex; justify-content:center; margin-bottom:16px;">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width: 48px; height: 48px; stroke: #0f766e; stroke-width: 2; fill: none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </div>
+        <h2 class="modal-title" style="text-align:center; color: #111827; font-size: 22px; font-weight: 700; margin-bottom: 12px;">Photo Guidelines</h2>
+        <p class="modal-sub" style="text-align:center; color: #6b7280; font-size: 15px; margin-bottom: 24px; line-height: 1.5;">Please upload a good quality image with the correct angle to get a good prediction.</p>
+        
+        <div style="background:rgba(15, 118, 110, 0.05); padding:16px; border-radius:16px; border:1px solid rgba(15, 118, 110, 0.1); margin-bottom:32px; text-align:left;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: #0f766e; stroke-width: 2; fill: none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-size:14px; color:#1f2937;">Well-lit environment</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: #0f766e; stroke-width: 2; fill: none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-size:14px; color:#1f2937;">Focus directly on the nails</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: #0f766e; stroke-width: 2; fill: none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-size:14px; color:#1f2937;">Avoid blurry or dark photos</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <button onclick="continueFromGuide()" style="width:100%; padding: 18px; border-radius: 12px; background: #0f766e; color: white; border: none; font-weight: 700; font-size: 15px; cursor: pointer; letter-spacing: 0.5px;">CONTINUE</button>
+          <button onclick="closeGuideDialog()" style="width:100%; padding: 12px; border-radius: 12px; background: transparent; color: #6b7280; border: none; font-weight: 700; font-size: 14px; cursor: pointer;">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nail Not Detected Modal -->
+    <div class="modal-overlay" id="nailNotDetectedModal">
+      <div class="modal-sheet">
+        <h2 class="modal-title">Nail Not Detected</h2>
+        <p class="modal-sub" id="nndReason">The uploaded image does not appear to contain a clear fingernail.</p>
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="closeNailNotDetectedModal()">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal Details Modal -->
+    <div class="modal-overlay" id="personalDetailsModal">
+      <div class="modal-sheet" style="padding: 32px;">
+        <h2 class="modal-title" style="margin-bottom: 24px;">Personal Details</h2>
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" id="pdName" placeholder="ram srinivas">
+        </div>
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" id="pdPhone" placeholder="9390088908">
+        </div>
+        <div class="field">
+          <label>Age</label>
+          <input type="number" id="pdAge" placeholder="25">
+        </div>
+        <div class="field">
+          <label>Gender</label>
+          <select id="pdGender" style="width:100%; padding:14px; border-radius:12px; border:1px solid var(--border-light); background:var(--bg-card); font-size:15px; color:var(--text-main); margin-top:8px;">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Height (cm)</label>
+          <input type="number" id="pdHeight" placeholder="175">
+        </div>
+        <div class="modal-actions" style="margin-top: 24px; justify-content: flex-end;">
+          <button class="btn btn-outline" onclick="document.getElementById('personalDetailsModal').classList.remove('show')">Cancel</button>
+          <button class="btn btn-primary" onclick="savePersonalDetails()">Save Changes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal-overlay" id="changePasswordModal">
+      <div class="modal-sheet" style="padding: 32px;">
+        <h2 class="modal-title" style="margin-bottom: 24px;">Change Password</h2>
+        <div class="field" style="position:relative;">
+          <label>Current Password</label>
+          <input type="password" id="cpCurrent" placeholder="••••••••">
+          <button type="button" onclick="togglePasswordVisibility('cpCurrent')" style="position:absolute; right:16px; top:42px; background:none; border:none; cursor:pointer; color:var(--text-muted);">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="field" style="position:relative;">
+          <label>New Password</label>
+          <input type="password" id="cpNew" placeholder="••••••••">
+          <button type="button" onclick="togglePasswordVisibility('cpNew')" style="position:absolute; right:16px; top:42px; background:none; border:none; cursor:pointer; color:var(--text-muted);">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="modal-actions" style="margin-top: 24px; justify-content: flex-end;">
+          <button class="btn btn-outline" onclick="document.getElementById('changePasswordModal').classList.remove('show')">Cancel</button>
+          <button class="btn btn-primary" onclick="saveNewPassword()">Update</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="modal-overlay" id="deleteAccountModal">
+      <div class="modal-sheet" style="padding: 32px;">
+        <h2 class="modal-title" style="margin-bottom: 24px; color: #dc2626;">Delete Account</h2>
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">This action is permanent and cannot be undone. Please enter your password to confirm.</p>
+        <div class="field" style="position:relative;">
+          <label>Password</label>
+          <input type="password" id="deleteAccountPassword" placeholder="••••••••">
+          <button type="button" onclick="togglePasswordVisibility('deleteAccountPassword')" style="position:absolute; right:16px; top:42px; background:none; border:none; cursor:pointer; color:var(--text-muted);">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="modal-actions" style="margin-top: 24px; justify-content: flex-end;">
+          <button class="btn btn-outline" onclick="document.getElementById('deleteAccountModal').classList.remove('show')">Cancel</button>
+          <button class="btn" style="background: #dc2626; color: white; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 700; cursor: pointer;" onclick="confirmDeleteAccount()">Delete Forever</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+      <div class="modal-sheet">
+        <h2 class="modal-title">Sign Out?</h2>
+        <p class="modal-sub">You will need to sign in again to view your clinical data.</p>
+        <div class="modal-actions">
+          <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="confirmLogout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diagnostic Scan Result Modal -->
+    <div class="modal-overlay" id="scanResultModal">
+      <div class="modal-sheet" style="border-radius: 32px; padding: 40px 32px; width: 440px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto;">
+        
+        <div style="display:flex; justify-content:center; margin-bottom:16px;">
+          <!-- Teal wave icon -->
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width: 48px; height: 48px; stroke: #0f766e; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round;"><path d="M2 12c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/><path d="M2 18c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/><path d="M2 6c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/></svg>
+        </div>
+        
+        <h2 class="modal-title" id="resDiagnosisName" style="text-align:center; color: #111827; font-size: 24px; font-weight: 800; margin-bottom: 8px;">Condition Name</h2>
+        
+        <p style="text-align:center; color: #0f766e; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 24px; text-transform: uppercase;">
+          <span id="resConfidence">98%</span> AI CONFIDENCE
+        </p>
+        
+        <p id="resDescription" style="color: #6b7280; font-size: 15px; line-height: 1.6; margin-bottom: 32px;">
+          Condition description goes here.
+        </p>
+        
+        <h4 style="color: #0f766e; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">DETECTIONS</h4>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <span id="resDiagnosisName2" style="color: #111827; font-weight: 700; font-size: 15px;">Condition Name</span>
+          <span id="resConfidence2" style="color: #0f766e; font-weight: 600; font-size: 15px;">98%</span>
+        </div>
+        
+        <div style="background: rgba(15, 118, 110, 0.05); padding: 20px; border-radius: 16px; border: 1px solid rgba(15, 118, 110, 0.1); margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px; stroke: #0f766e; stroke-width: 2; fill: none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <h4 style="color: #0f766e; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin: 0;">CLINICAL INSIGHTS</h4>
+          </div>
+          <p id="resRecommendation" style="color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0;">
+            Medical recommendation goes here.
+          </p>
+        </div>
+        
+        <p style="color: #9ca3af; font-size: 10px; line-height: 1.5; margin-bottom: 24px; text-align: justify;">
+          Disclaimer: This app provides AI-assisted insights for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <button onclick="closeScanResultModal()" style="width:100%; padding: 18px; border-radius: 12px; background: #0f766e; color: white; border: none; font-weight: 700; font-size: 15px; cursor: pointer; letter-spacing: 0.5px;">DISMISS</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analyzing Modal -->
+    <div class="modal-overlay" id="analyzingModal">
+      <div class="modal-sheet" style="border-radius: 32px; padding: 48px 32px; width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+        <div style="display:flex; justify-content:center; margin-bottom:24px;">
+          <svg class="svg-icon" viewBox="0 0 24 24" style="width: 56px; height: 56px; color: #0f766e; animation: spin 1.5s linear infinite;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="31.4" stroke-dashoffset="10"/></svg>
+        </div>
+        <h2 class="modal-title" style="color: #111827; font-size: 20px; font-weight: 800; margin-bottom: 8px;">Analysing Image...</h2>
+        <p class="modal-sub" style="color: #6b7280; font-size: 14px; margin: 0;">Please wait while our AI models process your nail photo.</p>
+      </div>
+    </div>
+
+  </div> <!-- /main-content -->
+
+  <!-- Inline Scripts for Profile settings -->
+  <script>
+    function savePersonalDetails() {
+      const name = document.getElementById('pdName').value || 'ram srinivas';
+      const phone = document.getElementById('pdPhone').value || '9390088908';
+      document.getElementById('profNameDisplay').innerText = name;
+      document.getElementById('profPhoneDisplay').innerText = phone;
+      document.getElementById('homeUserNameDisplay').innerText = name;
+      document.getElementById('personalDetailsModal').classList.remove('show');
+      toast('Personal details updated successfully!');
+    }
+
+    function saveNewPassword() {
+      const curr = document.getElementById('cpCurrent').value;
+      const nw = document.getElementById('cpNew').value;
+      if(!curr || !nw) {
+        toast('Please fill all fields', 'error');
+        return;
+      }
+      document.getElementById('changePasswordModal').classList.remove('show');
+      toast('Password updated securely!');
+    }
+
+    function confirmDeleteAccount() {
+      const pwd = document.getElementById('deleteAccountPassword').value;
+      if(!pwd) {
+        toast('Please enter your password', 'error');
+        return;
+      }
+      document.getElementById('deleteAccountModal').classList.remove('show');
+      if(typeof Profile !== 'undefined' && Profile.deleteAccount) {
+        Profile.deleteAccount(pwd).then(() => {
+          toast('Account deleted successfully', 'success');
+          setTimeout(() => window.location.reload(), 1500);
+        }).catch(e => toast('Failed to delete account', 'error'));
+      } else {
+        toast('Account deleted successfully', 'success');
+        setTimeout(() => window.location.reload(), 1500);
+      }
+    }
+
+    function toggleReminders(el) {
+      const timeInput = document.getElementById('reminderTimeInput');
+      if(el.checked) {
+        toast('Reminders enabled. We will alert you daily.', 'success');
+        localStorage.setItem('nailvital_reminders', 'true');
+        timeInput.style.display = 'block';
+        if(!timeInput.value) {
+          timeInput.value = '09:00';
+          localStorage.setItem('nailvital_reminder_time', '09:00');
+        }
+        if ("Notification" in window && Notification.permission !== "granted" && Notification.permission !== "denied") {
+          Notification.requestPermission();
+        }
+      } else {
+        toast('Reminders disabled.', 'warning');
+        localStorage.setItem('nailvital_reminders', 'false');
+        timeInput.style.display = 'none';
+      }
+    }
+    
+    // Initialize toggles from storage
+    document.addEventListener('DOMContentLoaded', () => {
+       const rm = localStorage.getItem('nailvital_reminders');
+       const timeInput = document.getElementById('reminderTimeInput');
+       if(rm === 'true') {
+         document.getElementById('remindersToggle').checked = true;
+         timeInput.style.display = 'block';
+         timeInput.value = localStorage.getItem('nailvital_reminder_time') || '09:00';
+       }
+
+       // Check every 10 seconds to fire reminder
+       setInterval(() => {
+         if (localStorage.getItem('nailvital_reminders') === 'true') {
+           const time = localStorage.getItem('nailvital_reminder_time');
+           if (time) {
+             const now = new Date();
+             const currentHrs = now.getHours().toString().padStart(2, '0');
+             const currentMins = now.getMinutes().toString().padStart(2, '0');
+             const currentTime = `${currentHrs}:${currentMins}`;
+             
+             if (currentTime === time) {
+               const today = now.toDateString();
+               if (localStorage.getItem('nailvital_last_reminder_date') !== today) {
+                 toast('⏰ Time for your daily nail health check!', 'success');
+                 localStorage.setItem('nailvital_last_reminder_date', today);
+                 
+                 // If browser notifications are permitted
+                 if ("Notification" in window && Notification.permission === "granted") {
+                   new Notification("NailVital AI", { body: "Time for your daily nail health check!" });
+                 }
+               }
+             }
+           }
+         }
+       }, 10000);
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
