@@ -1,8 +1,0 @@
-{
-  "name": "backend-security",
-  "version": "1.0.0",
-  "scripts": {
-    "test:security": "echo 'Running DAST/SAST'",
-    "test:performance": "k6 run k6-load-test.js"
-  }
-}
