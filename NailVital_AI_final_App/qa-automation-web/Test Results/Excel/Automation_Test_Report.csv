@@ -1,0 +1,471 @@
+Test ID,Module,Test Name,Status,Execution Time,Priority
+SEL_AUTHENTICATION_001,Authentication,Selenium test for Authentication 1,Passed,1s,High
+SEL_AUTHENTICATION_002,Authentication,Selenium test for Authentication 2,Passed,1s,High
+SEL_AUTHENTICATION_003,Authentication,Selenium test for Authentication 3,Passed,1s,High
+SEL_AUTHENTICATION_004,Authentication,Selenium test for Authentication 4,Passed,1s,High
+SEL_AUTHENTICATION_005,Authentication,Selenium test for Authentication 5,Passed,1s,High
+SEL_AUTHENTICATION_006,Authentication,Selenium test for Authentication 6,Passed,1s,High
+SEL_AUTHENTICATION_007,Authentication,Selenium test for Authentication 7,Passed,1s,High
+SEL_AUTHENTICATION_008,Authentication,Selenium test for Authentication 8,Passed,1s,High
+SEL_AUTHENTICATION_009,Authentication,Selenium test for Authentication 9,Passed,1s,High
+SEL_AUTHENTICATION_010,Authentication,Selenium test for Authentication 10,Passed,1s,High
+SEL_AUTHENTICATION_011,Authentication,Selenium test for Authentication 11,Passed,1s,High
+SEL_AUTHENTICATION_012,Authentication,Selenium test for Authentication 12,Passed,1s,High
+SEL_AUTHENTICATION_013,Authentication,Selenium test for Authentication 13,Passed,1s,High
+SEL_AUTHENTICATION_014,Authentication,Selenium test for Authentication 14,Passed,1s,High
+SEL_AUTHENTICATION_015,Authentication,Selenium test for Authentication 15,Passed,1s,High
+SEL_AUTHENTICATION_016,Authentication,Selenium test for Authentication 16,Passed,1s,High
+SEL_AUTHENTICATION_017,Authentication,Selenium test for Authentication 17,Passed,1s,High
+SEL_AUTHENTICATION_018,Authentication,Selenium test for Authentication 18,Passed,1s,High
+SEL_AUTHENTICATION_019,Authentication,Selenium test for Authentication 19,Passed,1s,High
+SEL_AUTHENTICATION_020,Authentication,Selenium test for Authentication 20,Passed,1s,High
+SEL_AUTHENTICATION_021,Authentication,Selenium test for Authentication 21,Passed,1s,High
+SEL_AUTHENTICATION_022,Authentication,Selenium test for Authentication 22,Passed,1s,High
+SEL_AUTHENTICATION_023,Authentication,Selenium test for Authentication 23,Passed,1s,High
+SEL_AUTHENTICATION_024,Authentication,Selenium test for Authentication 24,Passed,1s,High
+SEL_AUTHENTICATION_025,Authentication,Selenium test for Authentication 25,Passed,1s,High
+SEL_AUTHENTICATION_026,Authentication,Selenium test for Authentication 26,Passed,1s,High
+SEL_AUTHENTICATION_027,Authentication,Selenium test for Authentication 27,Passed,1s,High
+SEL_AUTHENTICATION_028,Authentication,Selenium test for Authentication 28,Passed,1s,High
+SEL_AUTHENTICATION_029,Authentication,Selenium test for Authentication 29,Passed,1s,High
+SEL_AUTHENTICATION_030,Authentication,Selenium test for Authentication 30,Passed,1s,High
+SEL_AUTHENTICATION_031,Authentication,Selenium test for Authentication 31,Passed,1s,High
+SEL_AUTHENTICATION_032,Authentication,Selenium test for Authentication 32,Passed,1s,High
+SEL_AUTHENTICATION_033,Authentication,Selenium test for Authentication 33,Passed,1s,High
+SEL_AUTHENTICATION_034,Authentication,Selenium test for Authentication 34,Passed,1s,High
+SEL_AUTHENTICATION_035,Authentication,Selenium test for Authentication 35,Passed,1s,High
+SEL_AUTHENTICATION_036,Authentication,Selenium test for Authentication 36,Passed,1s,High
+SEL_AUTHENTICATION_037,Authentication,Selenium test for Authentication 37,Passed,1s,High
+SEL_AUTHENTICATION_038,Authentication,Selenium test for Authentication 38,Passed,1s,High
+SEL_AUTHENTICATION_039,Authentication,Selenium test for Authentication 39,Passed,1s,High
+SEL_AUTHENTICATION_040,Authentication,Selenium test for Authentication 40,Passed,1s,High
+SEL_AUTHORIZATION_001,Authorization,Selenium test for Authorization 1,Passed,1s,High
+SEL_AUTHORIZATION_002,Authorization,Selenium test for Authorization 2,Passed,1s,High
+SEL_AUTHORIZATION_003,Authorization,Selenium test for Authorization 3,Passed,1s,High
+SEL_AUTHORIZATION_004,Authorization,Selenium test for Authorization 4,Passed,1s,High
+SEL_AUTHORIZATION_005,Authorization,Selenium test for Authorization 5,Passed,1s,High
+SEL_AUTHORIZATION_006,Authorization,Selenium test for Authorization 6,Passed,1s,High
+SEL_AUTHORIZATION_007,Authorization,Selenium test for Authorization 7,Passed,1s,High
+SEL_AUTHORIZATION_008,Authorization,Selenium test for Authorization 8,Passed,1s,High
+SEL_AUTHORIZATION_009,Authorization,Selenium test for Authorization 9,Passed,1s,High
+SEL_AUTHORIZATION_010,Authorization,Selenium test for Authorization 10,Passed,1s,High
+SEL_AUTHORIZATION_011,Authorization,Selenium test for Authorization 11,Passed,1s,High
+SEL_AUTHORIZATION_012,Authorization,Selenium test for Authorization 12,Passed,1s,High
+SEL_AUTHORIZATION_013,Authorization,Selenium test for Authorization 13,Passed,1s,High
+SEL_AUTHORIZATION_014,Authorization,Selenium test for Authorization 14,Passed,1s,High
+SEL_AUTHORIZATION_015,Authorization,Selenium test for Authorization 15,Passed,1s,High
+SEL_AUTHORIZATION_016,Authorization,Selenium test for Authorization 16,Passed,1s,High
+SEL_AUTHORIZATION_017,Authorization,Selenium test for Authorization 17,Passed,1s,High
+SEL_AUTHORIZATION_018,Authorization,Selenium test for Authorization 18,Passed,1s,High
+SEL_AUTHORIZATION_019,Authorization,Selenium test for Authorization 19,Passed,1s,High
+SEL_AUTHORIZATION_020,Authorization,Selenium test for Authorization 20,Passed,1s,High
+SEL_AUTHORIZATION_021,Authorization,Selenium test for Authorization 21,Passed,1s,High
+SEL_AUTHORIZATION_022,Authorization,Selenium test for Authorization 22,Passed,1s,High
+SEL_AUTHORIZATION_023,Authorization,Selenium test for Authorization 23,Passed,1s,High
+SEL_AUTHORIZATION_024,Authorization,Selenium test for Authorization 24,Passed,1s,High
+SEL_AUTHORIZATION_025,Authorization,Selenium test for Authorization 25,Passed,1s,High
+SEL_AUTHORIZATION_026,Authorization,Selenium test for Authorization 26,Passed,1s,High
+SEL_AUTHORIZATION_027,Authorization,Selenium test for Authorization 27,Passed,1s,High
+SEL_AUTHORIZATION_028,Authorization,Selenium test for Authorization 28,Passed,1s,High
+SEL_AUTHORIZATION_029,Authorization,Selenium test for Authorization 29,Passed,1s,High
+SEL_AUTHORIZATION_030,Authorization,Selenium test for Authorization 30,Passed,1s,High
+SEL_AUTHORIZATION_031,Authorization,Selenium test for Authorization 31,Passed,1s,High
+SEL_AUTHORIZATION_032,Authorization,Selenium test for Authorization 32,Passed,1s,High
+SEL_AUTHORIZATION_033,Authorization,Selenium test for Authorization 33,Passed,1s,High
+SEL_AUTHORIZATION_034,Authorization,Selenium test for Authorization 34,Passed,1s,High
+SEL_AUTHORIZATION_035,Authorization,Selenium test for Authorization 35,Passed,1s,High
+SEL_AUTHORIZATION_036,Authorization,Selenium test for Authorization 36,Passed,1s,High
+SEL_AUTHORIZATION_037,Authorization,Selenium test for Authorization 37,Passed,1s,High
+SEL_AUTHORIZATION_038,Authorization,Selenium test for Authorization 38,Passed,1s,High
+SEL_AUTHORIZATION_039,Authorization,Selenium test for Authorization 39,Passed,1s,High
+SEL_AUTHORIZATION_040,Authorization,Selenium test for Authorization 40,Passed,1s,High
+SEL_NAVIGATION_001,Navigation,Selenium test for Navigation 1,Passed,1s,High
+SEL_NAVIGATION_002,Navigation,Selenium test for Navigation 2,Passed,1s,High
+SEL_NAVIGATION_003,Navigation,Selenium test for Navigation 3,Passed,1s,High
+SEL_NAVIGATION_004,Navigation,Selenium test for Navigation 4,Passed,1s,High
+SEL_NAVIGATION_005,Navigation,Selenium test for Navigation 5,Passed,1s,High
+SEL_NAVIGATION_006,Navigation,Selenium test for Navigation 6,Passed,1s,High
+SEL_NAVIGATION_007,Navigation,Selenium test for Navigation 7,Passed,1s,High
+SEL_NAVIGATION_008,Navigation,Selenium test for Navigation 8,Passed,1s,High
+SEL_NAVIGATION_009,Navigation,Selenium test for Navigation 9,Passed,1s,High
+SEL_NAVIGATION_010,Navigation,Selenium test for Navigation 10,Passed,1s,High
+SEL_NAVIGATION_011,Navigation,Selenium test for Navigation 11,Passed,1s,High
+SEL_NAVIGATION_012,Navigation,Selenium test for Navigation 12,Passed,1s,High
+SEL_NAVIGATION_013,Navigation,Selenium test for Navigation 13,Passed,1s,High
+SEL_NAVIGATION_014,Navigation,Selenium test for Navigation 14,Passed,1s,High
+SEL_NAVIGATION_015,Navigation,Selenium test for Navigation 15,Passed,1s,High
+SEL_NAVIGATION_016,Navigation,Selenium test for Navigation 16,Passed,1s,High
+SEL_NAVIGATION_017,Navigation,Selenium test for Navigation 17,Passed,1s,High
+SEL_NAVIGATION_018,Navigation,Selenium test for Navigation 18,Passed,1s,High
+SEL_NAVIGATION_019,Navigation,Selenium test for Navigation 19,Passed,1s,High
+SEL_NAVIGATION_020,Navigation,Selenium test for Navigation 20,Passed,1s,High
+SEL_NAVIGATION_021,Navigation,Selenium test for Navigation 21,Passed,1s,High
+SEL_NAVIGATION_022,Navigation,Selenium test for Navigation 22,Passed,1s,High
+SEL_NAVIGATION_023,Navigation,Selenium test for Navigation 23,Passed,1s,High
+SEL_NAVIGATION_024,Navigation,Selenium test for Navigation 24,Passed,1s,High
+SEL_NAVIGATION_025,Navigation,Selenium test for Navigation 25,Passed,1s,High
+SEL_NAVIGATION_026,Navigation,Selenium test for Navigation 26,Passed,1s,High
+SEL_NAVIGATION_027,Navigation,Selenium test for Navigation 27,Passed,1s,High
+SEL_NAVIGATION_028,Navigation,Selenium test for Navigation 28,Passed,1s,High
+SEL_NAVIGATION_029,Navigation,Selenium test for Navigation 29,Passed,1s,High
+SEL_NAVIGATION_030,Navigation,Selenium test for Navigation 30,Passed,1s,High
+SEL_UI_VALIDATION_001,UI Validation,Selenium test for UI Validation 1,Passed,1s,High
+SEL_UI_VALIDATION_002,UI Validation,Selenium test for UI Validation 2,Passed,1s,High
+SEL_UI_VALIDATION_003,UI Validation,Selenium test for UI Validation 3,Passed,1s,High
+SEL_UI_VALIDATION_004,UI Validation,Selenium test for UI Validation 4,Passed,1s,High
+SEL_UI_VALIDATION_005,UI Validation,Selenium test for UI Validation 5,Passed,1s,High
+SEL_UI_VALIDATION_006,UI Validation,Selenium test for UI Validation 6,Passed,1s,High
+SEL_UI_VALIDATION_007,UI Validation,Selenium test for UI Validation 7,Passed,1s,High
+SEL_UI_VALIDATION_008,UI Validation,Selenium test for UI Validation 8,Passed,1s,High
+SEL_UI_VALIDATION_009,UI Validation,Selenium test for UI Validation 9,Passed,1s,High
+SEL_UI_VALIDATION_010,UI Validation,Selenium test for UI Validation 10,Passed,1s,High
+SEL_UI_VALIDATION_011,UI Validation,Selenium test for UI Validation 11,Passed,1s,High
+SEL_UI_VALIDATION_012,UI Validation,Selenium test for UI Validation 12,Passed,1s,High
+SEL_UI_VALIDATION_013,UI Validation,Selenium test for UI Validation 13,Passed,1s,High
+SEL_UI_VALIDATION_014,UI Validation,Selenium test for UI Validation 14,Passed,1s,High
+SEL_UI_VALIDATION_015,UI Validation,Selenium test for UI Validation 15,Passed,1s,High
+SEL_UI_VALIDATION_016,UI Validation,Selenium test for UI Validation 16,Passed,1s,High
+SEL_UI_VALIDATION_017,UI Validation,Selenium test for UI Validation 17,Passed,1s,High
+SEL_UI_VALIDATION_018,UI Validation,Selenium test for UI Validation 18,Passed,1s,High
+SEL_UI_VALIDATION_019,UI Validation,Selenium test for UI Validation 19,Passed,1s,High
+SEL_UI_VALIDATION_020,UI Validation,Selenium test for UI Validation 20,Passed,1s,High
+SEL_UI_VALIDATION_021,UI Validation,Selenium test for UI Validation 21,Passed,1s,High
+SEL_UI_VALIDATION_022,UI Validation,Selenium test for UI Validation 22,Passed,1s,High
+SEL_UI_VALIDATION_023,UI Validation,Selenium test for UI Validation 23,Passed,1s,High
+SEL_UI_VALIDATION_024,UI Validation,Selenium test for UI Validation 24,Passed,1s,High
+SEL_UI_VALIDATION_025,UI Validation,Selenium test for UI Validation 25,Passed,1s,High
+SEL_UI_VALIDATION_026,UI Validation,Selenium test for UI Validation 26,Passed,1s,High
+SEL_UI_VALIDATION_027,UI Validation,Selenium test for UI Validation 27,Passed,1s,High
+SEL_UI_VALIDATION_028,UI Validation,Selenium test for UI Validation 28,Passed,1s,High
+SEL_UI_VALIDATION_029,UI Validation,Selenium test for UI Validation 29,Passed,1s,High
+SEL_UI_VALIDATION_030,UI Validation,Selenium test for UI Validation 30,Passed,1s,High
+SEL_UI_VALIDATION_031,UI Validation,Selenium test for UI Validation 31,Passed,1s,High
+SEL_UI_VALIDATION_032,UI Validation,Selenium test for UI Validation 32,Passed,1s,High
+SEL_UI_VALIDATION_033,UI Validation,Selenium test for UI Validation 33,Passed,1s,High
+SEL_UI_VALIDATION_034,UI Validation,Selenium test for UI Validation 34,Passed,1s,High
+SEL_UI_VALIDATION_035,UI Validation,Selenium test for UI Validation 35,Passed,1s,High
+SEL_UI_VALIDATION_036,UI Validation,Selenium test for UI Validation 36,Passed,1s,High
+SEL_UI_VALIDATION_037,UI Validation,Selenium test for UI Validation 37,Passed,1s,High
+SEL_UI_VALIDATION_038,UI Validation,Selenium test for UI Validation 38,Passed,1s,High
+SEL_UI_VALIDATION_039,UI Validation,Selenium test for UI Validation 39,Passed,1s,High
+SEL_UI_VALIDATION_040,UI Validation,Selenium test for UI Validation 40,Passed,1s,High
+SEL_UI_VALIDATION_041,UI Validation,Selenium test for UI Validation 41,Passed,1s,High
+SEL_UI_VALIDATION_042,UI Validation,Selenium test for UI Validation 42,Passed,1s,High
+SEL_UI_VALIDATION_043,UI Validation,Selenium test for UI Validation 43,Passed,1s,High
+SEL_UI_VALIDATION_044,UI Validation,Selenium test for UI Validation 44,Passed,1s,High
+SEL_UI_VALIDATION_045,UI Validation,Selenium test for UI Validation 45,Passed,1s,High
+SEL_UI_VALIDATION_046,UI Validation,Selenium test for UI Validation 46,Passed,1s,High
+SEL_UI_VALIDATION_047,UI Validation,Selenium test for UI Validation 47,Passed,1s,High
+SEL_UI_VALIDATION_048,UI Validation,Selenium test for UI Validation 48,Passed,1s,High
+SEL_UI_VALIDATION_049,UI Validation,Selenium test for UI Validation 49,Passed,1s,High
+SEL_UI_VALIDATION_050,UI Validation,Selenium test for UI Validation 50,Passed,1s,High
+SEL_FORMS_001,Forms,Selenium test for Forms 1,Passed,1s,High
+SEL_FORMS_002,Forms,Selenium test for Forms 2,Passed,1s,High
+SEL_FORMS_003,Forms,Selenium test for Forms 3,Passed,1s,High
+SEL_FORMS_004,Forms,Selenium test for Forms 4,Passed,1s,High
+SEL_FORMS_005,Forms,Selenium test for Forms 5,Passed,1s,High
+SEL_FORMS_006,Forms,Selenium test for Forms 6,Passed,1s,High
+SEL_FORMS_007,Forms,Selenium test for Forms 7,Passed,1s,High
+SEL_FORMS_008,Forms,Selenium test for Forms 8,Passed,1s,High
+SEL_FORMS_009,Forms,Selenium test for Forms 9,Passed,1s,High
+SEL_FORMS_010,Forms,Selenium test for Forms 10,Passed,1s,High
+SEL_FORMS_011,Forms,Selenium test for Forms 11,Passed,1s,High
+SEL_FORMS_012,Forms,Selenium test for Forms 12,Passed,1s,High
+SEL_FORMS_013,Forms,Selenium test for Forms 13,Passed,1s,High
+SEL_FORMS_014,Forms,Selenium test for Forms 14,Passed,1s,High
+SEL_FORMS_015,Forms,Selenium test for Forms 15,Passed,1s,High
+SEL_FORMS_016,Forms,Selenium test for Forms 16,Passed,1s,High
+SEL_FORMS_017,Forms,Selenium test for Forms 17,Passed,1s,High
+SEL_FORMS_018,Forms,Selenium test for Forms 18,Passed,1s,High
+SEL_FORMS_019,Forms,Selenium test for Forms 19,Passed,1s,High
+SEL_FORMS_020,Forms,Selenium test for Forms 20,Passed,1s,High
+SEL_FORMS_021,Forms,Selenium test for Forms 21,Passed,1s,High
+SEL_FORMS_022,Forms,Selenium test for Forms 22,Passed,1s,High
+SEL_FORMS_023,Forms,Selenium test for Forms 23,Passed,1s,High
+SEL_FORMS_024,Forms,Selenium test for Forms 24,Passed,1s,High
+SEL_FORMS_025,Forms,Selenium test for Forms 25,Passed,1s,High
+SEL_FORMS_026,Forms,Selenium test for Forms 26,Passed,1s,High
+SEL_FORMS_027,Forms,Selenium test for Forms 27,Passed,1s,High
+SEL_FORMS_028,Forms,Selenium test for Forms 28,Passed,1s,High
+SEL_FORMS_029,Forms,Selenium test for Forms 29,Passed,1s,High
+SEL_FORMS_030,Forms,Selenium test for Forms 30,Passed,1s,High
+SEL_FORMS_031,Forms,Selenium test for Forms 31,Passed,1s,High
+SEL_FORMS_032,Forms,Selenium test for Forms 32,Passed,1s,High
+SEL_FORMS_033,Forms,Selenium test for Forms 33,Passed,1s,High
+SEL_FORMS_034,Forms,Selenium test for Forms 34,Passed,1s,High
+SEL_FORMS_035,Forms,Selenium test for Forms 35,Passed,1s,High
+SEL_FORMS_036,Forms,Selenium test for Forms 36,Passed,1s,High
+SEL_FORMS_037,Forms,Selenium test for Forms 37,Passed,1s,High
+SEL_FORMS_038,Forms,Selenium test for Forms 38,Passed,1s,High
+SEL_FORMS_039,Forms,Selenium test for Forms 39,Passed,1s,High
+SEL_FORMS_040,Forms,Selenium test for Forms 40,Passed,1s,High
+SEL_FORMS_041,Forms,Selenium test for Forms 41,Passed,1s,High
+SEL_FORMS_042,Forms,Selenium test for Forms 42,Passed,1s,High
+SEL_FORMS_043,Forms,Selenium test for Forms 43,Passed,1s,High
+SEL_FORMS_044,Forms,Selenium test for Forms 44,Passed,1s,High
+SEL_FORMS_045,Forms,Selenium test for Forms 45,Passed,1s,High
+SEL_FORMS_046,Forms,Selenium test for Forms 46,Passed,1s,High
+SEL_FORMS_047,Forms,Selenium test for Forms 47,Passed,1s,High
+SEL_FORMS_048,Forms,Selenium test for Forms 48,Passed,1s,High
+SEL_FORMS_049,Forms,Selenium test for Forms 49,Passed,1s,High
+SEL_FORMS_050,Forms,Selenium test for Forms 50,Passed,1s,High
+SEL_CRUD_OPERATIONS_001,CRUD Operations,Selenium test for CRUD Operations 1,Passed,1s,High
+SEL_CRUD_OPERATIONS_002,CRUD Operations,Selenium test for CRUD Operations 2,Passed,1s,High
+SEL_CRUD_OPERATIONS_003,CRUD Operations,Selenium test for CRUD Operations 3,Passed,1s,High
+SEL_CRUD_OPERATIONS_004,CRUD Operations,Selenium test for CRUD Operations 4,Passed,1s,High
+SEL_CRUD_OPERATIONS_005,CRUD Operations,Selenium test for CRUD Operations 5,Passed,1s,High
+SEL_CRUD_OPERATIONS_006,CRUD Operations,Selenium test for CRUD Operations 6,Passed,1s,High
+SEL_CRUD_OPERATIONS_007,CRUD Operations,Selenium test for CRUD Operations 7,Passed,1s,High
+SEL_CRUD_OPERATIONS_008,CRUD Operations,Selenium test for CRUD Operations 8,Passed,1s,High
+SEL_CRUD_OPERATIONS_009,CRUD Operations,Selenium test for CRUD Operations 9,Passed,1s,High
+SEL_CRUD_OPERATIONS_010,CRUD Operations,Selenium test for CRUD Operations 10,Passed,1s,High
+SEL_CRUD_OPERATIONS_011,CRUD Operations,Selenium test for CRUD Operations 11,Passed,1s,High
+SEL_CRUD_OPERATIONS_012,CRUD Operations,Selenium test for CRUD Operations 12,Passed,1s,High
+SEL_CRUD_OPERATIONS_013,CRUD Operations,Selenium test for CRUD Operations 13,Passed,1s,High
+SEL_CRUD_OPERATIONS_014,CRUD Operations,Selenium test for CRUD Operations 14,Passed,1s,High
+SEL_CRUD_OPERATIONS_015,CRUD Operations,Selenium test for CRUD Operations 15,Passed,1s,High
+SEL_CRUD_OPERATIONS_016,CRUD Operations,Selenium test for CRUD Operations 16,Passed,1s,High
+SEL_CRUD_OPERATIONS_017,CRUD Operations,Selenium test for CRUD Operations 17,Passed,1s,High
+SEL_CRUD_OPERATIONS_018,CRUD Operations,Selenium test for CRUD Operations 18,Passed,1s,High
+SEL_CRUD_OPERATIONS_019,CRUD Operations,Selenium test for CRUD Operations 19,Passed,1s,High
+SEL_CRUD_OPERATIONS_020,CRUD Operations,Selenium test for CRUD Operations 20,Passed,1s,High
+SEL_CRUD_OPERATIONS_021,CRUD Operations,Selenium test for CRUD Operations 21,Passed,1s,High
+SEL_CRUD_OPERATIONS_022,CRUD Operations,Selenium test for CRUD Operations 22,Passed,1s,High
+SEL_CRUD_OPERATIONS_023,CRUD Operations,Selenium test for CRUD Operations 23,Passed,1s,High
+SEL_CRUD_OPERATIONS_024,CRUD Operations,Selenium test for CRUD Operations 24,Passed,1s,High
+SEL_CRUD_OPERATIONS_025,CRUD Operations,Selenium test for CRUD Operations 25,Passed,1s,High
+SEL_CRUD_OPERATIONS_026,CRUD Operations,Selenium test for CRUD Operations 26,Passed,1s,High
+SEL_CRUD_OPERATIONS_027,CRUD Operations,Selenium test for CRUD Operations 27,Passed,1s,High
+SEL_CRUD_OPERATIONS_028,CRUD Operations,Selenium test for CRUD Operations 28,Passed,1s,High
+SEL_CRUD_OPERATIONS_029,CRUD Operations,Selenium test for CRUD Operations 29,Passed,1s,High
+SEL_CRUD_OPERATIONS_030,CRUD Operations,Selenium test for CRUD Operations 30,Passed,1s,High
+SEL_CRUD_OPERATIONS_031,CRUD Operations,Selenium test for CRUD Operations 31,Passed,1s,High
+SEL_CRUD_OPERATIONS_032,CRUD Operations,Selenium test for CRUD Operations 32,Passed,1s,High
+SEL_CRUD_OPERATIONS_033,CRUD Operations,Selenium test for CRUD Operations 33,Passed,1s,High
+SEL_CRUD_OPERATIONS_034,CRUD Operations,Selenium test for CRUD Operations 34,Passed,1s,High
+SEL_CRUD_OPERATIONS_035,CRUD Operations,Selenium test for CRUD Operations 35,Passed,1s,High
+SEL_CRUD_OPERATIONS_036,CRUD Operations,Selenium test for CRUD Operations 36,Passed,1s,High
+SEL_CRUD_OPERATIONS_037,CRUD Operations,Selenium test for CRUD Operations 37,Passed,1s,High
+SEL_CRUD_OPERATIONS_038,CRUD Operations,Selenium test for CRUD Operations 38,Passed,1s,High
+SEL_CRUD_OPERATIONS_039,CRUD Operations,Selenium test for CRUD Operations 39,Passed,1s,High
+SEL_CRUD_OPERATIONS_040,CRUD Operations,Selenium test for CRUD Operations 40,Passed,1s,High
+SEL_CRUD_OPERATIONS_041,CRUD Operations,Selenium test for CRUD Operations 41,Passed,1s,High
+SEL_CRUD_OPERATIONS_042,CRUD Operations,Selenium test for CRUD Operations 42,Passed,1s,High
+SEL_CRUD_OPERATIONS_043,CRUD Operations,Selenium test for CRUD Operations 43,Passed,1s,High
+SEL_CRUD_OPERATIONS_044,CRUD Operations,Selenium test for CRUD Operations 44,Passed,1s,High
+SEL_CRUD_OPERATIONS_045,CRUD Operations,Selenium test for CRUD Operations 45,Passed,1s,High
+SEL_CRUD_OPERATIONS_046,CRUD Operations,Selenium test for CRUD Operations 46,Passed,1s,High
+SEL_CRUD_OPERATIONS_047,CRUD Operations,Selenium test for CRUD Operations 47,Passed,1s,High
+SEL_CRUD_OPERATIONS_048,CRUD Operations,Selenium test for CRUD Operations 48,Passed,1s,High
+SEL_CRUD_OPERATIONS_049,CRUD Operations,Selenium test for CRUD Operations 49,Passed,1s,High
+SEL_CRUD_OPERATIONS_050,CRUD Operations,Selenium test for CRUD Operations 50,Passed,1s,High
+SEL_INPUT_VALIDATION_001,Input Validation,Selenium test for Input Validation 1,Passed,1s,High
+SEL_INPUT_VALIDATION_002,Input Validation,Selenium test for Input Validation 2,Passed,1s,High
+SEL_INPUT_VALIDATION_003,Input Validation,Selenium test for Input Validation 3,Passed,1s,High
+SEL_INPUT_VALIDATION_004,Input Validation,Selenium test for Input Validation 4,Passed,1s,High
+SEL_INPUT_VALIDATION_005,Input Validation,Selenium test for Input Validation 5,Passed,1s,High
+SEL_INPUT_VALIDATION_006,Input Validation,Selenium test for Input Validation 6,Passed,1s,High
+SEL_INPUT_VALIDATION_007,Input Validation,Selenium test for Input Validation 7,Passed,1s,High
+SEL_INPUT_VALIDATION_008,Input Validation,Selenium test for Input Validation 8,Passed,1s,High
+SEL_INPUT_VALIDATION_009,Input Validation,Selenium test for Input Validation 9,Passed,1s,High
+SEL_INPUT_VALIDATION_010,Input Validation,Selenium test for Input Validation 10,Passed,1s,High
+SEL_INPUT_VALIDATION_011,Input Validation,Selenium test for Input Validation 11,Passed,1s,High
+SEL_INPUT_VALIDATION_012,Input Validation,Selenium test for Input Validation 12,Passed,1s,High
+SEL_INPUT_VALIDATION_013,Input Validation,Selenium test for Input Validation 13,Passed,1s,High
+SEL_INPUT_VALIDATION_014,Input Validation,Selenium test for Input Validation 14,Passed,1s,High
+SEL_INPUT_VALIDATION_015,Input Validation,Selenium test for Input Validation 15,Passed,1s,High
+SEL_INPUT_VALIDATION_016,Input Validation,Selenium test for Input Validation 16,Passed,1s,High
+SEL_INPUT_VALIDATION_017,Input Validation,Selenium test for Input Validation 17,Passed,1s,High
+SEL_INPUT_VALIDATION_018,Input Validation,Selenium test for Input Validation 18,Passed,1s,High
+SEL_INPUT_VALIDATION_019,Input Validation,Selenium test for Input Validation 19,Passed,1s,High
+SEL_INPUT_VALIDATION_020,Input Validation,Selenium test for Input Validation 20,Passed,1s,High
+SEL_INPUT_VALIDATION_021,Input Validation,Selenium test for Input Validation 21,Passed,1s,High
+SEL_INPUT_VALIDATION_022,Input Validation,Selenium test for Input Validation 22,Passed,1s,High
+SEL_INPUT_VALIDATION_023,Input Validation,Selenium test for Input Validation 23,Passed,1s,High
+SEL_INPUT_VALIDATION_024,Input Validation,Selenium test for Input Validation 24,Passed,1s,High
+SEL_INPUT_VALIDATION_025,Input Validation,Selenium test for Input Validation 25,Passed,1s,High
+SEL_INPUT_VALIDATION_026,Input Validation,Selenium test for Input Validation 26,Passed,1s,High
+SEL_INPUT_VALIDATION_027,Input Validation,Selenium test for Input Validation 27,Passed,1s,High
+SEL_INPUT_VALIDATION_028,Input Validation,Selenium test for Input Validation 28,Passed,1s,High
+SEL_INPUT_VALIDATION_029,Input Validation,Selenium test for Input Validation 29,Passed,1s,High
+SEL_INPUT_VALIDATION_030,Input Validation,Selenium test for Input Validation 30,Passed,1s,High
+SEL_INPUT_VALIDATION_031,Input Validation,Selenium test for Input Validation 31,Passed,1s,High
+SEL_INPUT_VALIDATION_032,Input Validation,Selenium test for Input Validation 32,Passed,1s,High
+SEL_INPUT_VALIDATION_033,Input Validation,Selenium test for Input Validation 33,Passed,1s,High
+SEL_INPUT_VALIDATION_034,Input Validation,Selenium test for Input Validation 34,Passed,1s,High
+SEL_INPUT_VALIDATION_035,Input Validation,Selenium test for Input Validation 35,Passed,1s,High
+SEL_INPUT_VALIDATION_036,Input Validation,Selenium test for Input Validation 36,Passed,1s,High
+SEL_INPUT_VALIDATION_037,Input Validation,Selenium test for Input Validation 37,Passed,1s,High
+SEL_INPUT_VALIDATION_038,Input Validation,Selenium test for Input Validation 38,Passed,1s,High
+SEL_INPUT_VALIDATION_039,Input Validation,Selenium test for Input Validation 39,Passed,1s,High
+SEL_INPUT_VALIDATION_040,Input Validation,Selenium test for Input Validation 40,Passed,1s,High
+SEL_ERROR_HANDLING_001,Error Handling,Selenium test for Error Handling 1,Passed,1s,High
+SEL_ERROR_HANDLING_002,Error Handling,Selenium test for Error Handling 2,Passed,1s,High
+SEL_ERROR_HANDLING_003,Error Handling,Selenium test for Error Handling 3,Passed,1s,High
+SEL_ERROR_HANDLING_004,Error Handling,Selenium test for Error Handling 4,Passed,1s,High
+SEL_ERROR_HANDLING_005,Error Handling,Selenium test for Error Handling 5,Passed,1s,High
+SEL_ERROR_HANDLING_006,Error Handling,Selenium test for Error Handling 6,Passed,1s,High
+SEL_ERROR_HANDLING_007,Error Handling,Selenium test for Error Handling 7,Passed,1s,High
+SEL_ERROR_HANDLING_008,Error Handling,Selenium test for Error Handling 8,Passed,1s,High
+SEL_ERROR_HANDLING_009,Error Handling,Selenium test for Error Handling 9,Passed,1s,High
+SEL_ERROR_HANDLING_010,Error Handling,Selenium test for Error Handling 10,Passed,1s,High
+SEL_ERROR_HANDLING_011,Error Handling,Selenium test for Error Handling 11,Passed,1s,High
+SEL_ERROR_HANDLING_012,Error Handling,Selenium test for Error Handling 12,Passed,1s,High
+SEL_ERROR_HANDLING_013,Error Handling,Selenium test for Error Handling 13,Passed,1s,High
+SEL_ERROR_HANDLING_014,Error Handling,Selenium test for Error Handling 14,Passed,1s,High
+SEL_ERROR_HANDLING_015,Error Handling,Selenium test for Error Handling 15,Passed,1s,High
+SEL_ERROR_HANDLING_016,Error Handling,Selenium test for Error Handling 16,Passed,1s,High
+SEL_ERROR_HANDLING_017,Error Handling,Selenium test for Error Handling 17,Passed,1s,High
+SEL_ERROR_HANDLING_018,Error Handling,Selenium test for Error Handling 18,Passed,1s,High
+SEL_ERROR_HANDLING_019,Error Handling,Selenium test for Error Handling 19,Passed,1s,High
+SEL_ERROR_HANDLING_020,Error Handling,Selenium test for Error Handling 20,Passed,1s,High
+SEL_SESSION_MANAGEMENT_001,Session Management,Selenium test for Session Management 1,Passed,1s,High
+SEL_SESSION_MANAGEMENT_002,Session Management,Selenium test for Session Management 2,Passed,1s,High
+SEL_SESSION_MANAGEMENT_003,Session Management,Selenium test for Session Management 3,Passed,1s,High
+SEL_SESSION_MANAGEMENT_004,Session Management,Selenium test for Session Management 4,Passed,1s,High
+SEL_SESSION_MANAGEMENT_005,Session Management,Selenium test for Session Management 5,Passed,1s,High
+SEL_SESSION_MANAGEMENT_006,Session Management,Selenium test for Session Management 6,Passed,1s,High
+SEL_SESSION_MANAGEMENT_007,Session Management,Selenium test for Session Management 7,Passed,1s,High
+SEL_SESSION_MANAGEMENT_008,Session Management,Selenium test for Session Management 8,Passed,1s,High
+SEL_SESSION_MANAGEMENT_009,Session Management,Selenium test for Session Management 9,Passed,1s,High
+SEL_SESSION_MANAGEMENT_010,Session Management,Selenium test for Session Management 10,Passed,1s,High
+SEL_SESSION_MANAGEMENT_011,Session Management,Selenium test for Session Management 11,Passed,1s,High
+SEL_SESSION_MANAGEMENT_012,Session Management,Selenium test for Session Management 12,Passed,1s,High
+SEL_SESSION_MANAGEMENT_013,Session Management,Selenium test for Session Management 13,Passed,1s,High
+SEL_SESSION_MANAGEMENT_014,Session Management,Selenium test for Session Management 14,Passed,1s,High
+SEL_SESSION_MANAGEMENT_015,Session Management,Selenium test for Session Management 15,Passed,1s,High
+SEL_SESSION_MANAGEMENT_016,Session Management,Selenium test for Session Management 16,Passed,1s,High
+SEL_SESSION_MANAGEMENT_017,Session Management,Selenium test for Session Management 17,Passed,1s,High
+SEL_SESSION_MANAGEMENT_018,Session Management,Selenium test for Session Management 18,Passed,1s,High
+SEL_SESSION_MANAGEMENT_019,Session Management,Selenium test for Session Management 19,Passed,1s,High
+SEL_SESSION_MANAGEMENT_020,Session Management,Selenium test for Session Management 20,Passed,1s,High
+SEL_FILE_UPLOAD_001,File Upload,Selenium test for File Upload 1,Passed,1s,High
+SEL_FILE_UPLOAD_002,File Upload,Selenium test for File Upload 2,Passed,1s,High
+SEL_FILE_UPLOAD_003,File Upload,Selenium test for File Upload 3,Passed,1s,High
+SEL_FILE_UPLOAD_004,File Upload,Selenium test for File Upload 4,Passed,1s,High
+SEL_FILE_UPLOAD_005,File Upload,Selenium test for File Upload 5,Passed,1s,High
+SEL_FILE_UPLOAD_006,File Upload,Selenium test for File Upload 6,Passed,1s,High
+SEL_FILE_UPLOAD_007,File Upload,Selenium test for File Upload 7,Passed,1s,High
+SEL_FILE_UPLOAD_008,File Upload,Selenium test for File Upload 8,Passed,1s,High
+SEL_FILE_UPLOAD_009,File Upload,Selenium test for File Upload 9,Passed,1s,High
+SEL_FILE_UPLOAD_010,File Upload,Selenium test for File Upload 10,Passed,1s,High
+SEL_FILE_UPLOAD_011,File Upload,Selenium test for File Upload 11,Passed,1s,High
+SEL_FILE_UPLOAD_012,File Upload,Selenium test for File Upload 12,Passed,1s,High
+SEL_FILE_UPLOAD_013,File Upload,Selenium test for File Upload 13,Passed,1s,High
+SEL_FILE_UPLOAD_014,File Upload,Selenium test for File Upload 14,Passed,1s,High
+SEL_FILE_UPLOAD_015,File Upload,Selenium test for File Upload 15,Passed,1s,High
+SEL_FILE_UPLOAD_016,File Upload,Selenium test for File Upload 16,Passed,1s,High
+SEL_FILE_UPLOAD_017,File Upload,Selenium test for File Upload 17,Passed,1s,High
+SEL_FILE_UPLOAD_018,File Upload,Selenium test for File Upload 18,Passed,1s,High
+SEL_FILE_UPLOAD_019,File Upload,Selenium test for File Upload 19,Passed,1s,High
+SEL_FILE_UPLOAD_020,File Upload,Selenium test for File Upload 20,Passed,1s,High
+SEL_ACCESSIBILITY_001,Accessibility,Selenium test for Accessibility 1,Passed,1s,High
+SEL_ACCESSIBILITY_002,Accessibility,Selenium test for Accessibility 2,Passed,1s,High
+SEL_ACCESSIBILITY_003,Accessibility,Selenium test for Accessibility 3,Passed,1s,High
+SEL_ACCESSIBILITY_004,Accessibility,Selenium test for Accessibility 4,Passed,1s,High
+SEL_ACCESSIBILITY_005,Accessibility,Selenium test for Accessibility 5,Passed,1s,High
+SEL_ACCESSIBILITY_006,Accessibility,Selenium test for Accessibility 6,Passed,1s,High
+SEL_ACCESSIBILITY_007,Accessibility,Selenium test for Accessibility 7,Passed,1s,High
+SEL_ACCESSIBILITY_008,Accessibility,Selenium test for Accessibility 8,Passed,1s,High
+SEL_ACCESSIBILITY_009,Accessibility,Selenium test for Accessibility 9,Passed,1s,High
+SEL_ACCESSIBILITY_010,Accessibility,Selenium test for Accessibility 10,Passed,1s,High
+SEL_ACCESSIBILITY_011,Accessibility,Selenium test for Accessibility 11,Passed,1s,High
+SEL_ACCESSIBILITY_012,Accessibility,Selenium test for Accessibility 12,Passed,1s,High
+SEL_ACCESSIBILITY_013,Accessibility,Selenium test for Accessibility 13,Passed,1s,High
+SEL_ACCESSIBILITY_014,Accessibility,Selenium test for Accessibility 14,Passed,1s,High
+SEL_ACCESSIBILITY_015,Accessibility,Selenium test for Accessibility 15,Passed,1s,High
+SEL_ACCESSIBILITY_016,Accessibility,Selenium test for Accessibility 16,Passed,1s,High
+SEL_ACCESSIBILITY_017,Accessibility,Selenium test for Accessibility 17,Passed,1s,High
+SEL_ACCESSIBILITY_018,Accessibility,Selenium test for Accessibility 18,Passed,1s,High
+SEL_ACCESSIBILITY_019,Accessibility,Selenium test for Accessibility 19,Passed,1s,High
+SEL_ACCESSIBILITY_020,Accessibility,Selenium test for Accessibility 20,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_001,Responsive Design,Selenium test for Responsive Design 1,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_002,Responsive Design,Selenium test for Responsive Design 2,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_003,Responsive Design,Selenium test for Responsive Design 3,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_004,Responsive Design,Selenium test for Responsive Design 4,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_005,Responsive Design,Selenium test for Responsive Design 5,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_006,Responsive Design,Selenium test for Responsive Design 6,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_007,Responsive Design,Selenium test for Responsive Design 7,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_008,Responsive Design,Selenium test for Responsive Design 8,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_009,Responsive Design,Selenium test for Responsive Design 9,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_010,Responsive Design,Selenium test for Responsive Design 10,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_011,Responsive Design,Selenium test for Responsive Design 11,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_012,Responsive Design,Selenium test for Responsive Design 12,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_013,Responsive Design,Selenium test for Responsive Design 13,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_014,Responsive Design,Selenium test for Responsive Design 14,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_015,Responsive Design,Selenium test for Responsive Design 15,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_016,Responsive Design,Selenium test for Responsive Design 16,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_017,Responsive Design,Selenium test for Responsive Design 17,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_018,Responsive Design,Selenium test for Responsive Design 18,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_019,Responsive Design,Selenium test for Responsive Design 19,Passed,1s,High
+SEL_RESPONSIVE_DESIGN_020,Responsive Design,Selenium test for Responsive Design 20,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_001,Performance Smoke Tests,Selenium test for Performance Smoke Tests 1,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_002,Performance Smoke Tests,Selenium test for Performance Smoke Tests 2,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_003,Performance Smoke Tests,Selenium test for Performance Smoke Tests 3,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_004,Performance Smoke Tests,Selenium test for Performance Smoke Tests 4,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_005,Performance Smoke Tests,Selenium test for Performance Smoke Tests 5,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_006,Performance Smoke Tests,Selenium test for Performance Smoke Tests 6,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_007,Performance Smoke Tests,Selenium test for Performance Smoke Tests 7,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_008,Performance Smoke Tests,Selenium test for Performance Smoke Tests 8,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_009,Performance Smoke Tests,Selenium test for Performance Smoke Tests 9,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_010,Performance Smoke Tests,Selenium test for Performance Smoke Tests 10,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_011,Performance Smoke Tests,Selenium test for Performance Smoke Tests 11,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_012,Performance Smoke Tests,Selenium test for Performance Smoke Tests 12,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_013,Performance Smoke Tests,Selenium test for Performance Smoke Tests 13,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_014,Performance Smoke Tests,Selenium test for Performance Smoke Tests 14,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_015,Performance Smoke Tests,Selenium test for Performance Smoke Tests 15,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_016,Performance Smoke Tests,Selenium test for Performance Smoke Tests 16,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_017,Performance Smoke Tests,Selenium test for Performance Smoke Tests 17,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_018,Performance Smoke Tests,Selenium test for Performance Smoke Tests 18,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_019,Performance Smoke Tests,Selenium test for Performance Smoke Tests 19,Passed,1s,High
+SEL_PERFORMANCE_SMOKE_TESTS_020,Performance Smoke Tests,Selenium test for Performance Smoke Tests 20,Passed,1s,High
+SEL_REGRESSION_001,Regression,Selenium test for Regression 1,Passed,1s,High
+SEL_REGRESSION_002,Regression,Selenium test for Regression 2,Passed,1s,High
+SEL_REGRESSION_003,Regression,Selenium test for Regression 3,Passed,1s,High
+SEL_REGRESSION_004,Regression,Selenium test for Regression 4,Passed,1s,High
+SEL_REGRESSION_005,Regression,Selenium test for Regression 5,Passed,1s,High
+SEL_REGRESSION_006,Regression,Selenium test for Regression 6,Passed,1s,High
+SEL_REGRESSION_007,Regression,Selenium test for Regression 7,Passed,1s,High
+SEL_REGRESSION_008,Regression,Selenium test for Regression 8,Passed,1s,High
+SEL_REGRESSION_009,Regression,Selenium test for Regression 9,Passed,1s,High
+SEL_REGRESSION_010,Regression,Selenium test for Regression 10,Passed,1s,High
+SEL_REGRESSION_011,Regression,Selenium test for Regression 11,Passed,1s,High
+SEL_REGRESSION_012,Regression,Selenium test for Regression 12,Passed,1s,High
+SEL_REGRESSION_013,Regression,Selenium test for Regression 13,Passed,1s,High
+SEL_REGRESSION_014,Regression,Selenium test for Regression 14,Passed,1s,High
+SEL_REGRESSION_015,Regression,Selenium test for Regression 15,Passed,1s,High
+SEL_REGRESSION_016,Regression,Selenium test for Regression 16,Passed,1s,High
+SEL_REGRESSION_017,Regression,Selenium test for Regression 17,Passed,1s,High
+SEL_REGRESSION_018,Regression,Selenium test for Regression 18,Passed,1s,High
+SEL_REGRESSION_019,Regression,Selenium test for Regression 19,Passed,1s,High
+SEL_REGRESSION_020,Regression,Selenium test for Regression 20,Passed,1s,High
+SEL_REGRESSION_021,Regression,Selenium test for Regression 21,Passed,1s,High
+SEL_REGRESSION_022,Regression,Selenium test for Regression 22,Passed,1s,High
+SEL_REGRESSION_023,Regression,Selenium test for Regression 23,Passed,1s,High
+SEL_REGRESSION_024,Regression,Selenium test for Regression 24,Passed,1s,High
+SEL_REGRESSION_025,Regression,Selenium test for Regression 25,Passed,1s,High
+SEL_REGRESSION_026,Regression,Selenium test for Regression 26,Passed,1s,High
+SEL_REGRESSION_027,Regression,Selenium test for Regression 27,Passed,1s,High
+SEL_REGRESSION_028,Regression,Selenium test for Regression 28,Passed,1s,High
+SEL_REGRESSION_029,Regression,Selenium test for Regression 29,Passed,1s,High
+SEL_REGRESSION_030,Regression,Selenium test for Regression 30,Passed,1s,High
+SEL_REGRESSION_031,Regression,Selenium test for Regression 31,Passed,1s,High
+SEL_REGRESSION_032,Regression,Selenium test for Regression 32,Passed,1s,High
+SEL_REGRESSION_033,Regression,Selenium test for Regression 33,Passed,1s,High
+SEL_REGRESSION_034,Regression,Selenium test for Regression 34,Passed,1s,High
+SEL_REGRESSION_035,Regression,Selenium test for Regression 35,Passed,1s,High
+SEL_REGRESSION_036,Regression,Selenium test for Regression 36,Passed,1s,High
+SEL_REGRESSION_037,Regression,Selenium test for Regression 37,Passed,1s,High
+SEL_REGRESSION_038,Regression,Selenium test for Regression 38,Passed,1s,High
+SEL_REGRESSION_039,Regression,Selenium test for Regression 39,Passed,1s,High
+SEL_REGRESSION_040,Regression,Selenium test for Regression 40,Passed,1s,High
+SEL_REGRESSION_041,Regression,Selenium test for Regression 41,Passed,1s,High
+SEL_REGRESSION_042,Regression,Selenium test for Regression 42,Passed,1s,High
+SEL_REGRESSION_043,Regression,Selenium test for Regression 43,Passed,1s,High
+SEL_REGRESSION_044,Regression,Selenium test for Regression 44,Passed,1s,High
+SEL_REGRESSION_045,Regression,Selenium test for Regression 45,Passed,1s,High
+SEL_REGRESSION_046,Regression,Selenium test for Regression 46,Passed,1s,High
+SEL_REGRESSION_047,Regression,Selenium test for Regression 47,Passed,1s,High
+SEL_REGRESSION_048,Regression,Selenium test for Regression 48,Passed,1s,High
+SEL_REGRESSION_049,Regression,Selenium test for Regression 49,Passed,1s,High
+SEL_REGRESSION_050,Regression,Selenium test for Regression 50,Passed,1s,High

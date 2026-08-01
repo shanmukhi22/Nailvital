@@ -1,0 +1,64 @@
+com.nailvital.app-jetified-animation-core-release-0 C:\Users\gumma\.gradle\caches\transforms-4\01684f7f6489db8e98b2b297ff648aad\transformed\jetified-animation-core-release\res
+com.nailvital.app-jetified-activity-compose-1.8.2-1 C:\Users\gumma\.gradle\caches\transforms-4\024f5f8b4f1680f29c3f76ad03f0d5eb\transformed\jetified-activity-compose-1.8.2\res
+com.nailvital.app-navigation-common-ktx-2.7.7-2 C:\Users\gumma\.gradle\caches\transforms-4\064094c98daeb7782f111197b3fdcae7\transformed\navigation-common-ktx-2.7.7\res
+com.nailvital.app-jetified-animation-release-3 C:\Users\gumma\.gradle\caches\transforms-4\06a41450159c864edaeede57ed02ec82\transformed\jetified-animation-release\res
+com.nailvital.app-jetified-customview-poolingcontainer-1.0.0-4 C:\Users\gumma\.gradle\caches\transforms-4\0d0296d107940ca3bf5585a6b355079e\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.nailvital.app-navigation-runtime-2.7.7-5 C:\Users\gumma\.gradle\caches\transforms-4\13fb2e6863050f00647210c00350c987\transformed\navigation-runtime-2.7.7\res
+com.nailvital.app-coordinatorlayout-1.1.0-6 C:\Users\gumma\.gradle\caches\transforms-4\1e1676ab9d59c2446071a5f3b49d7959\transformed\coordinatorlayout-1.1.0\res
+com.nailvital.app-jetified-activity-1.8.2-7 C:\Users\gumma\.gradle\caches\transforms-4\1fc4f130c14a4aeebee1ce6a605b10d2\transformed\jetified-activity-1.8.2\res
+com.nailvital.app-jetified-core-ktx-1.12.0-8 C:\Users\gumma\.gradle\caches\transforms-4\254e679a0654aea386198f9808f671c7\transformed\jetified-core-ktx-1.12.0\res
+com.nailvital.app-jetified-ui-tooling-preview-release-9 C:\Users\gumma\.gradle\caches\transforms-4\263753f8e1832d98def21f5ee6967a7c\transformed\jetified-ui-tooling-preview-release\res
+com.nailvital.app-jetified-ui-unit-release-10 C:\Users\gumma\.gradle\caches\transforms-4\26f5920b8e098ebffbd24e3828c2fd41\transformed\jetified-ui-unit-release\res
+com.nailvital.app-recyclerview-1.1.0-11 C:\Users\gumma\.gradle\caches\transforms-4\2a8c946ede2d42d8713eb7fdec15eadb\transformed\recyclerview-1.1.0\res
+com.nailvital.app-transition-1.2.0-12 C:\Users\gumma\.gradle\caches\transforms-4\2cf3380962204366de8c33c209169f40\transformed\transition-1.2.0\res
+com.nailvital.app-jetified-emoji2-views-helper-1.3.0-13 C:\Users\gumma\.gradle\caches\transforms-4\2eea9a6506a3a7542ab35ff23d7e2f73\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.nailvital.app-navigation-runtime-ktx-2.7.7-14 C:\Users\gumma\.gradle\caches\transforms-4\2fa1c2a0b5b17d2aa731aa50465b2a89\transformed\navigation-runtime-ktx-2.7.7\res
+com.nailvital.app-jetified-coil-base-2.6.0-15 C:\Users\gumma\.gradle\caches\transforms-4\31c523dae79dc48ddf1ec68d7e2420b8\transformed\jetified-coil-base-2.6.0\res
+com.nailvital.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-16 C:\Users\gumma\.gradle\caches\transforms-4\334c6775bda6798a75b6856875fb0100\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.nailvital.app-lifecycle-livedata-2.7.0-17 C:\Users\gumma\.gradle\caches\transforms-4\343cc94df85506ba1e0e594e90751c45\transformed\lifecycle-livedata-2.7.0\res
+com.nailvital.app-jetified-savedstate-ktx-1.2.1-18 C:\Users\gumma\.gradle\caches\transforms-4\3849b49a18304a505b73a45b608e9603\transformed\jetified-savedstate-ktx-1.2.1\res
+com.nailvital.app-constraintlayout-2.0.1-19 C:\Users\gumma\.gradle\caches\transforms-4\43e47fc16b79a3e370865e677b6a04b0\transformed\constraintlayout-2.0.1\res
+com.nailvital.app-lifecycle-livedata-core-2.7.0-20 C:\Users\gumma\.gradle\caches\transforms-4\5be1421a92c6709db60ce57e2b91a9f4\transformed\lifecycle-livedata-core-2.7.0\res
+com.nailvital.app-jetified-foundation-release-21 C:\Users\gumma\.gradle\caches\transforms-4\5bf9afda498124c51f7c1431bebd3f4b\transformed\jetified-foundation-release\res
+com.nailvital.app-lifecycle-runtime-2.7.0-22 C:\Users\gumma\.gradle\caches\transforms-4\615b47268585134185b47bf481b3aec0\transformed\lifecycle-runtime-2.7.0\res
+com.nailvital.app-jetified-ui-text-release-23 C:\Users\gumma\.gradle\caches\transforms-4\65c01ae0fd39b1d0608847bfb9d2ce40\transformed\jetified-ui-text-release\res
+com.nailvital.app-jetified-foundation-layout-release-24 C:\Users\gumma\.gradle\caches\transforms-4\6639b76bbf6efe29ed76de25a7f58981\transformed\jetified-foundation-layout-release\res
+com.nailvital.app-jetified-lifecycle-viewmodel-ktx-2.7.0-25 C:\Users\gumma\.gradle\caches\transforms-4\6760cb94565ca08558e2d4ba186f0a08\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.nailvital.app-navigation-common-2.7.7-26 C:\Users\gumma\.gradle\caches\transforms-4\69c72ca42bb2fb7f8725863d1e2c7708\transformed\navigation-common-2.7.7\res
+com.nailvital.app-jetified-ui-graphics-release-27 C:\Users\gumma\.gradle\caches\transforms-4\6c4dedcbad714080145779bd5fca237b\transformed\jetified-ui-graphics-release\res
+com.nailvital.app-jetified-ui-release-28 C:\Users\gumma\.gradle\caches\transforms-4\758db4f68560fb946b42fefbfd051057\transformed\jetified-ui-release\res
+com.nailvital.app-material-1.11.0-29 C:\Users\gumma\.gradle\caches\transforms-4\788caf17ec3246ffc768ffa06c66ae04\transformed\material-1.11.0\res
+com.nailvital.app-cardview-1.0.0-30 C:\Users\gumma\.gradle\caches\transforms-4\811dcda206a345355ffc39911a8189a5\transformed\cardview-1.0.0\res
+com.nailvital.app-core-runtime-2.2.0-31 C:\Users\gumma\.gradle\caches\transforms-4\8161bf15586a097f2cddc1d9bee9e0bc\transformed\core-runtime-2.2.0\res
+com.nailvital.app-jetified-ui-geometry-release-32 C:\Users\gumma\.gradle\caches\transforms-4\8260a47fd0cae3e6afd2ca391d2d5a8d\transformed\jetified-ui-geometry-release\res
+com.nailvital.app-fragment-1.3.6-33 C:\Users\gumma\.gradle\caches\transforms-4\82f6453f7c319ef2bc3af4f4a0bae6ac\transformed\fragment-1.3.6\res
+com.nailvital.app-jetified-lifecycle-viewmodel-compose-2.7.0-34 C:\Users\gumma\.gradle\caches\transforms-4\83caa9e7bed00b07e50a482f5b46fbff\transformed\jetified-lifecycle-viewmodel-compose-2.7.0\res
+com.nailvital.app-drawerlayout-1.1.1-35 C:\Users\gumma\.gradle\caches\transforms-4\83e63331f2aa5f4e7104fced34542226\transformed\drawerlayout-1.1.1\res
+com.nailvital.app-appcompat-1.6.1-36 C:\Users\gumma\.gradle\caches\transforms-4\8601fe81b3ba2de0a47a9b51699125ab\transformed\appcompat-1.6.1\res
+com.nailvital.app-jetified-lifecycle-livedata-core-ktx-2.7.0-37 C:\Users\gumma\.gradle\caches\transforms-4\8ef1e1e4811028188274682adb647c51\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.nailvital.app-jetified-emoji2-1.3.0-38 C:\Users\gumma\.gradle\caches\transforms-4\96265c392826ae2807639e02034363ad\transformed\jetified-emoji2-1.3.0\res
+com.nailvital.app-jetified-startup-runtime-1.1.1-39 C:\Users\gumma\.gradle\caches\transforms-4\98074d69a0dc0c285a11a78bf44a6093\transformed\jetified-startup-runtime-1.1.1\res
+com.nailvital.app-jetified-lifecycle-runtime-ktx-2.7.0-40 C:\Users\gumma\.gradle\caches\transforms-4\99af69b0d6a87a14a17b754955d51c27\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.nailvital.app-jetified-savedstate-1.2.1-41 C:\Users\gumma\.gradle\caches\transforms-4\9e1ef5f7abd9a7bc38f5d43263731b7a\transformed\jetified-savedstate-1.2.1\res
+com.nailvital.app-jetified-ui-util-release-42 C:\Users\gumma\.gradle\caches\transforms-4\9e59f736f5d30cf9ab6b057f96b38b9a\transformed\jetified-ui-util-release\res
+com.nailvital.app-jetified-navigation-compose-2.7.7-43 C:\Users\gumma\.gradle\caches\transforms-4\a3803cb12dbfdbd2b443efd3ea6f80cf\transformed\jetified-navigation-compose-2.7.7\res
+com.nailvital.app-jetified-material-ripple-release-44 C:\Users\gumma\.gradle\caches\transforms-4\ab71db0b8c36be5a2731e75430c10080\transformed\jetified-material-ripple-release\res
+com.nailvital.app-jetified-profileinstaller-1.3.1-45 C:\Users\gumma\.gradle\caches\transforms-4\b096d2790897d2242e0c6a6a44c9484f\transformed\jetified-profileinstaller-1.3.1\res
+com.nailvital.app-jetified-viewpager2-1.0.0-46 C:\Users\gumma\.gradle\caches\transforms-4\bf3376859a00a277ff2724d5423bf52a\transformed\jetified-viewpager2-1.0.0\res
+com.nailvital.app-jetified-activity-ktx-1.8.2-47 C:\Users\gumma\.gradle\caches\transforms-4\bfcec712fc2d9f991a62a6027885b882\transformed\jetified-activity-ktx-1.8.2\res
+com.nailvital.app-jetified-material3-release-48 C:\Users\gumma\.gradle\caches\transforms-4\c2bdbe7bb5ec81f2774ca296774c6f87\transformed\jetified-material3-release\res
+com.nailvital.app-jetified-runtime-saveable-release-49 C:\Users\gumma\.gradle\caches\transforms-4\c7a646204c3bf85ccb5a91c4d32b4a41\transformed\jetified-runtime-saveable-release\res
+com.nailvital.app-jetified-appcompat-resources-1.6.1-50 C:\Users\gumma\.gradle\caches\transforms-4\cd23d4a0524a12f113414d4f26cc2bda\transformed\jetified-appcompat-resources-1.6.1\res
+com.nailvital.app-jetified-material-icons-extended-release-51 C:\Users\gumma\.gradle\caches\transforms-4\d3ef575046067ea21fdb123e4f9e2570\transformed\jetified-material-icons-extended-release\res
+com.nailvital.app-core-1.12.0-52 C:\Users\gumma\.gradle\caches\transforms-4\d80761cf8f14c058380e1ba872fdcfa2\transformed\core-1.12.0\res
+com.nailvital.app-jetified-material-icons-core-release-53 C:\Users\gumma\.gradle\caches\transforms-4\d9ce931321e65c122ed1499669ad620e\transformed\jetified-material-icons-core-release\res
+com.nailvital.app-jetified-annotation-experimental-1.4.0-54 C:\Users\gumma\.gradle\caches\transforms-4\e2254043b9e6395205f0ecdd4ce2f542\transformed\jetified-annotation-experimental-1.4.0\res
+com.nailvital.app-jetified-lifecycle-process-2.7.0-55 C:\Users\gumma\.gradle\caches\transforms-4\e54723a3eec17129aef41747eca42252\transformed\jetified-lifecycle-process-2.7.0\res
+com.nailvital.app-jetified-runtime-release-56 C:\Users\gumma\.gradle\caches\transforms-4\ebcbf917b04ddc560f768fa8d07e3291\transformed\jetified-runtime-release\res
+com.nailvital.app-lifecycle-viewmodel-2.7.0-57 C:\Users\gumma\.gradle\caches\transforms-4\f56ff556c3ef4c7bfe0c4e462da9b052\transformed\lifecycle-viewmodel-2.7.0\res
+com.nailvital.app-resValues-58 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\build\generated\res\resValues\debug
+com.nailvital.app-packageDebugResources-59 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.nailvital.app-packageDebugResources-60 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.nailvital.app-merged_res-61 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\build\intermediates\merged_res\debug
+com.nailvital.app-debug-62 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\src\debug\res
+com.nailvital.app-main-63 D:\NailVital_Ai_image1 (2)\NailVital_Ai_image1\NailVital_Ai_image1\NailVital_AI_Frontend\app\src\main\res

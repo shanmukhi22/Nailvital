@@ -1,0 +1,74 @@
+name: Android App E2E Automation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  android-e2e:
+    runs-on: macos-latest # macOS is required for Android emulators with hardware acceleration in GitHub Actions
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Setup Node.js (for Appium)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install Appium
+      run: |
+        npm install -g appium
+        appium driver install uiautomator2
+
+    - name: Build Android APK
+      run: |
+        cd App
+        chmod +x ./gradlew
+        ./gradlew assembleDebug
+      
+    - name: Start Appium Server
+      run: appium &
+      
+    - name: Run Appium Tests on Emulator
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 31
+        target: default
+        arch: x86_64
+        profile: Nexus 6
+        script: |
+          # The emulator is running, now execute tests
+          cd qa-automation-android
+          npm install
+          npm test
+
+    - name: Upload Test Reports and Screenshots
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: android-test-reports
+        path: |
+          qa-automation-android/reports/
+          qa-automation-android/screenshots/
+          qa-automation-android/logs/
+        retention-days: 30
+
+    - name: Publish Test Summary
+      if: always()
+      run: |
+        echo "# Android Appium E2E Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "Execution completed." >> $GITHUB_STEP_SUMMARY
+        cat qa-automation-android/reports/Summary/summary.md >> $GITHUB_STEP_SUMMARY || echo "No summary found" >> $GITHUB_STEP_SUMMARY

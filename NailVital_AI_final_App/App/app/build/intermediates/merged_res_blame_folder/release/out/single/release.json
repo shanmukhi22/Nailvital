@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_intro_3.png.flat",
+        "source": "com.nailvital.app-main-63:/drawable/intro_3.png"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_intro_1.png.flat",
+        "source": "com.nailvital.app-main-63:/drawable/intro_1.png"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.nailvital.app-main-63:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.nailvital.app-main-63:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.nailvital.app-main-63:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_intro_2.png.flat",
+        "source": "com.nailvital.app-main-63:/drawable/intro_2.png"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/drawable_splash_logo.png.flat",
+        "source": "com.nailvital.app-main-63:/drawable/splash_logo.png"
+    },
+    {
+        "merged": "com.nailvital.app-merged_res-62:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.nailvital.app-main-63:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

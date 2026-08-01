@@ -1,0 +1,13 @@
+{
+  "name": "android-e2e-appium",
+  "version": "1.0.0",
+  "description": "Appium E2E framework for Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio run config/wdio.conf.js"
+  },
+  "dependencies": {
+    "webdriverio": "^8.0.0",
+    "appium": "^2.0.0"
+  }
+}
