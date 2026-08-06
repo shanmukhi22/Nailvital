@@ -39,3 +39,14 @@ jobs:
         python Website/server.py &
         sleep 3
         pytest tests/ui_website/test_website_ui.py
+
+    - name: Generate Excel Test Cases
+      run: |
+        cd NailVital_AI_final_App
+        python tests/generate_test_cases.py
+
+    - name: Upload Excel Test Cases Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: NailVital-Test-Cases
+        path: NailVital_AI_final_App/NailVital_Test_Cases_Sheets.xlsx
