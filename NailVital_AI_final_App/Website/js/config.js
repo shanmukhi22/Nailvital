@@ -1,7 +1,7 @@
 // ─── CONFIGURATION & LOCAL DEMO FALLBACK DATABASE ───
 
 const CONFIG = {
-  API_BASE_URL: 'http://127.0.0.1:8000',
+  API_BASE_URL: 'http://10.205.245.73:8000',
   TOKEN_KEY: 'nailvital_access_token',
   USER_KEY: 'nailvital_user_info',
 
