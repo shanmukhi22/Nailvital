@@ -129,11 +129,11 @@ function updateSlide() {
   document.querySelectorAll('.get-dot').forEach((d, i) => {
     d.classList.toggle('active', i === currentSlide);
   });
-  
+
   const nextBtn = document.getElementById('getNextBtn');
   const disclaimer = document.getElementById('getDisclaimer');
   const check = document.getElementById('getDisclaimerCheck');
-  
+
   if (currentSlide === slides.length - 1) {
     disclaimer.style.display = 'block';
     nextBtn.textContent = 'START YOUR JOURNEY';
@@ -178,7 +178,7 @@ async function doGuestLogin() {
   Auth.pendingRegisterData = null;
   localStorage.setItem(CONFIG.USER_KEY, JSON.stringify(Auth.currentUser));
   ApiService.setToken('demo_guest_token'); // mock token
-  
+
   updateUserDisplay(Auth.currentUser);
   toast('Welcome Guest 👋');
   setTimeout(() => showScreen('home'), 600);
@@ -452,14 +452,14 @@ async function doRegister() {
   }
 
   // Password
-  if (pass.length < 8) { 
+  if (pass.length < 8) {
     showError('regPassField');
     const hint = document.getElementById('regPassHint');
     if (hint) {
       hint.style.color = '#EF4444';
       hint.textContent = '⚠ Minimum 8 characters required';
     }
-    ok = false; 
+    ok = false;
   }
 
   // Terms and Privacy Checkbox
@@ -585,12 +585,12 @@ async function sendReset() {
 async function doResetPassword() {
   const otpEl = document.getElementById('forgotCode');
   const newPassEl = document.getElementById('forgotNewPass');
-  
+
   if (!otpEl || !newPassEl) {
     toast('Error: form elements not found', 'error');
     return;
   }
-  
+
   const otp = otpEl.value.trim();
   const newPass = newPassEl.value;
 
@@ -633,7 +633,7 @@ function stopWebcam() {
 // ── CAPTURE & ANALYZE IMAGE ──
 async function doScan() {
   document.getElementById('analyzingModal').classList.add('show');
-  
+
   // Dynamic UI state for analyzing modal
   let progress = 0;
   let msgIdx = 0;
@@ -644,25 +644,25 @@ async function doScan() {
     "Detecting ridges and anomalies...",
     "Finalizing AI insights..."
   ];
-  
+
   const subEl = document.getElementById('analyzingSubtext');
   const progEl = document.getElementById('analyzeProgress');
-  
+
   if (subEl) subEl.textContent = "Initiating scan...";
   if (progEl) progEl.style.width = '0%';
-  
+
   if (analyzeInterval) clearInterval(analyzeInterval);
   analyzeInterval = setInterval(() => {
     progress += Math.random() * 12 + 3; // Add 3-15% randomly
     if (progress > 92) progress = 92; // Cap at 92% until finished
     if (progEl) progEl.style.width = `${progress}%`;
-    
+
     if (Math.random() > 0.4 && subEl) {
-        subEl.textContent = msgs[msgIdx % msgs.length];
-        msgIdx++;
+      subEl.textContent = msgs[msgIdx % msgs.length];
+      msgIdx++;
     }
   }, 700);
-  
+
   // Also disable the file input to be safe
   const fileInput = document.getElementById('scanFileInput');
   if (fileInput) fileInput.disabled = true;
@@ -710,7 +710,7 @@ async function doScan() {
       document.getElementById('analyzingModal').classList.remove('show');
       if (analyzeInterval) clearInterval(analyzeInterval);
     }, 400); // Give it a brief moment to show 100%
-    
+
     const fileInput = document.getElementById('scanFileInput');
     if (fileInput) fileInput.disabled = false;
   }
@@ -726,8 +726,40 @@ function handleFileUpload(input) {
 }
 
 function showScanResultModal(res) {
-  const diagName = res.display_name || res.result_class;
-  const confText = `${Math.round(res.confidence || 91.4)}%`;
+  // Use top-level properties primarily (as populated by the backend), but fallback to findings or a default.
+  let primaryName = res.display_name;
+  let primaryClass = res.result_class;
+  let primaryConf = res.confidence;
+  let primaryDesc = res.description;
+  let primaryRec = res.recommendation;
+
+  if (res.findings && res.findings.length > 0) {
+    const f = res.findings[0];
+    if (f.display_name) primaryName = f.display_name;
+    if (f.result_class) primaryClass = f.result_class;
+    if (f.confidence !== undefined && f.confidence !== null) primaryConf = f.confidence;
+    if (f.description) primaryDesc = f.description;
+    if (f.recommendation) primaryRec = f.recommendation;
+  }
+  
+  // Extra fallback: map common result_classes if display_name is somehow missing
+  if (!primaryName) {
+    const knownConditions = {
+      'healthy': 'Healthy Nails',
+      'koilonychia': 'Koilonychia (Spoon Nails)',
+      'beaus_lines': 'Beau\'s Lines',
+      'onychomycosis': 'Onychomycosis (Nail Fungus)',
+      'melanonychia': 'Melanonychia',
+      'aloperia_areata': 'Alopecia Areata (Nail Changes)',
+      'splinter_hemorrhage': 'Splinter Hemorrhage',
+      'terrys_nail': 'Terry\'s Nails',
+      'yellow_nails': 'Yellow Nail Syndrome'
+    };
+    primaryName = knownConditions[primaryClass] || primaryClass || 'Analysis completed';
+  }
+
+  const diagName = primaryName;
+  const confText = `${Math.round(primaryConf || 91.4)}%`;
 
   document.getElementById('resDiagnosisName').textContent = diagName;
   document.getElementById('resConfidence').textContent = confText;
@@ -741,8 +773,8 @@ function showScanResultModal(res) {
   const elConf2 = document.getElementById('resConfidence2');
   if (elConf2) elConf2.textContent = confText;
 
-  document.getElementById('resDescription').textContent = res.description || 'Analysis completed.';
-  document.getElementById('resRecommendation').textContent = res.recommendation || 'Consult a medical professional for advice.';
+  document.getElementById('resDescription').textContent = primaryDesc || 'Analysis completed.';
+  document.getElementById('resRecommendation').textContent = primaryRec || 'Consult a medical professional for advice.';
 
   document.getElementById('scanResultModal').classList.add('show');
 }
@@ -829,9 +861,9 @@ async function loadUserHistory() {
 function renderHealthSignals() {
   const container = document.getElementById('homeHealthSignalsGrid');
   const heroText = document.getElementById('homeHeroLastScan');
-  
+
   if (!container) return;
-  
+
   // 1. Update Hero Card
   if (userScans.length > 0) {
     const latest = userScans[0];
@@ -843,31 +875,31 @@ function renderHealthSignals() {
 
   // 2. Render all 22 conditions
   let html = '';
-  
+
   const latestScan = userScans.length > 0 ? userScans[0] : null;
 
   ALL_CONDITIONS.forEach(cond => {
     // Check if the latest scan matches this condition
     let match = null;
     if (latestScan) {
-      if (latestScan.result_class === cond.id || 
-          (latestScan.display_name && latestScan.display_name === cond.name) ||
-          (cond.id === 'healthy' && latestScan.result_class === 'normal')) {
+      if (latestScan.result_class === cond.id ||
+        (latestScan.display_name && latestScan.display_name === cond.name) ||
+        (cond.id === 'healthy' && latestScan.result_class === 'normal')) {
         match = latestScan;
       } else if (latestScan.findings && Array.isArray(latestScan.findings)) {
-        match = latestScan.findings.find(f => 
-          f.result_class === cond.id || 
+        match = latestScan.findings.find(f =>
+          f.result_class === cond.id ||
           (f.display_name && f.display_name === cond.name) ||
           (cond.id === 'healthy' && f.result_class === 'normal')
         );
       }
     }
-    
+
     let prob = 0;
     let riskLabel = "LOW";
     let badgeColor = "#06b6d4"; // Cyan
     let badgeBg = "rgba(6,182,212,0.1)";
-    
+
     if (match) {
       prob = match.confidence || 0;
       if (prob >= 65) {
@@ -882,7 +914,7 @@ function renderHealthSignals() {
         riskLabel = "LOW RISK";
       }
     }
-    
+
     html += `
       <div class="glass-card" onclick="showScreen('wiki')" style="cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; padding:20px; background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-sm); box-shadow:var(--shadow-card);">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
@@ -903,7 +935,7 @@ function renderHealthSignals() {
       </div>
     `;
   });
-  
+
   container.innerHTML = html;
 }
 
@@ -965,8 +997,9 @@ async function renderHistoryCards() {
     const date = new Date(scan.created_at || Date.now()).toISOString().split('T')[0];
     const diag = scan.display_name || scan.result_class;
     const finger = scan.finger || 'Finger 1';
-    const imgSrc = scan.image_path ? `${CONFIG.API_BASE_URL}/${scan.image_path}` : 'https://images.unsplash.com/photo-1599839619722-39751411ea63?w=200&h=200&fit=crop';
-    
+    const imgFilename = scan.image_path ? scan.image_path.replace(/^.*[\\/]/, '') : null;
+    const imgSrc = imgFilename ? `${CONFIG.API_BASE_URL}/uploads/${imgFilename}` : 'https://images.unsplash.com/photo-1599839619722-39751411ea63?w=200&h=200&fit=crop';
+
     return `
     <div style="background:white; border-radius:24px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.03); display:flex; align-items:center; gap:20px;">
       
@@ -1069,19 +1102,19 @@ function updateUserDisplay(user) {
 
   const homeUserNameDisplay = document.getElementById('homeUserNameDisplay');
   if (homeUserNameDisplay) homeUserNameDisplay.textContent = user.name.split(' ')[0];
-  
+
   const sidebarAvatar = document.getElementById('sidebarAvatar');
   if (sidebarAvatar) sidebarAvatar.textContent = initials;
-  
+
   const sidebarName = document.getElementById('sidebarName');
   if (sidebarName) sidebarName.textContent = user.name;
-  
+
   const profAvatarDisplay = document.getElementById('profAvatarDisplay');
   if (profAvatarDisplay) profAvatarDisplay.textContent = initials;
-  
+
   const profNameDisplay = document.getElementById('profNameDisplay');
   if (profNameDisplay) profNameDisplay.textContent = user.name;
-  
+
   const profEmailDisplay = document.getElementById('profEmailDisplay');
   if (profEmailDisplay) profEmailDisplay.textContent = user.email;
 }

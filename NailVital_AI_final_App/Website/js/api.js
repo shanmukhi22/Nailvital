@@ -39,7 +39,7 @@ const ApiService = {
     return headers;
   },
 
-  async request(endpoint, options = {}, timeoutMs = 10000) {
+  async request(endpoint, options = {}, timeoutMs = 30000) {
     const url = `${CONFIG.API_BASE_URL}${endpoint}`;
     const isMultipart = options.body instanceof FormData;
     const headers = { ...this.getHeaders(isMultipart), ...(options.headers || {}) };

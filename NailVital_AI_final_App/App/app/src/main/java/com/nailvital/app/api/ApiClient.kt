@@ -192,7 +192,7 @@ data class VoiceCommandResponse(
 object ApiClient {
     // Development URL (Your local IP) - switch to PROD_URL when deploying
     // NOTE: If using Android Emulator, change this to "http://10.0.2.2:8001/"
-    private const val DEV_URL = "http://10.205.245.73:8000/"
+    private const val DEV_URL = "http://10.14.242.73:8000/"
 
     // Production URL - fill this in after deploying to Render/Hugging Face
     private const val PROD_URL = "https://your-production-url-here.com/"

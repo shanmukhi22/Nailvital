@@ -15,16 +15,21 @@ load_dotenv()
 from ultralytics import YOLO
 from huggingface_hub import hf_hub_download
 
-# Gemini
+# Gemini — NEW google-genai SDK
 try:
-    import google.generativeai as genai_old
+    from google import genai
+    from google.genai import types as genai_types
+    _GENAI_AVAILABLE = True
 except ImportError:
-    genai_old = None
+    genai = None
+    genai_types = None
+    _GENAI_AVAILABLE = False
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 HF_TOKEN = os.getenv("HF_TOKEN")
 YOLO_MODEL_REPO = "mnemic/nails_seg_yolov8"
-GEMINI_MODEL = "gemini-flash-latest"
+# gemini-3.1-flash-lite: confirmed FREE tier, supports image analysis
+GEMINI_MODEL = "models/gemini-3.1-flash-lite"
 
 CONFIDENCE_THRESH = 0.25
 
@@ -183,6 +188,7 @@ class MLService:
         self.yolo_model = None
         self._load_yolo_model()
         self.gemini_model = None
+        self.gemini_client = None   # New google-genai client
         self._configure_gemini()
 
     def _load_yolo_model(self):
@@ -206,16 +212,19 @@ class MLService:
             self.yolo_model = None
 
     def _configure_gemini(self):
-        print("🔷 Configuring Gemini for nail analysis...")
-        if genai_old and GEMINI_API_KEY:
-            genai_old.configure(api_key=GEMINI_API_KEY)
-            self.gemini_model = genai_old.GenerativeModel(
-                model_name=GEMINI_MODEL,
-                system_instruction=SYSTEM_INSTRUCTION
-            )
-            print("✅ Gemini configured successfully.")
+        print("🔷 Configuring Gemini for nail analysis (google-genai SDK)...")
+        if _GENAI_AVAILABLE and GEMINI_API_KEY:
+            try:
+                self.gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+                self.gemini_model = GEMINI_MODEL  # Just store model name string
+                print(f"✅ Gemini configured successfully with model: {GEMINI_MODEL}")
+            except Exception as e:
+                print(f"❌ Gemini configuration failed: {e}")
+                self.gemini_client = None
+                self.gemini_model = None
         else:
-            print("❌ Gemini configuration failed (Missing API Key or google.generativeai module)")
+            print("❌ Gemini configuration failed (Missing API Key or google-genai module)")
+            self.gemini_client = None
             self.gemini_model = None
 
     def detect_and_crop_nail(self, image_bytes: bytes):
@@ -274,31 +283,49 @@ class MLService:
         return None, "no_nail", 0.0
 
     def analyze_with_gemini(self, pil_image: Image.Image):
-        if not self.gemini_model:
+        if not self.gemini_model or not self.gemini_client:
             raise Exception("Gemini model not initialized")
 
         try:
-            import google.generativeai as genai
-            generation_config = genai.types.GenerationConfig(
-                temperature=0.1,                    # Low = accurate
-                top_p=0.8,
-                max_output_tokens=2048,
-                response_mime_type="application/json"  # Force JSON
-            )
-            
-            response = self.gemini_model.generate_content(
-                [pil_image, NAIL_ANALYSIS_PROMPT],
-                generation_config=generation_config
+            # Convert PIL Image to bytes for the new google-genai SDK
+            img_buf = io.BytesIO()
+            pil_image.save(img_buf, format="JPEG")
+            img_bytes = img_buf.getvalue()
+
+            # Build image part using new SDK types
+            image_part = genai_types.Part.from_bytes(
+                data=img_bytes,
+                mime_type="image/jpeg"
             )
 
-            v_text = response.text.strip()
+            generation_config = genai_types.GenerateContentConfig(
+                temperature=0.1,          # Low = accurate, not creative
+                top_p=0.8,
+                max_output_tokens=2048,
+                system_instruction=SYSTEM_INSTRUCTION,
+                response_mime_type="application/json"  # Force JSON output
+            )
+
+            response = self.gemini_client.models.generate_content(
+                model=self.gemini_model,
+                contents=[image_part, NAIL_ANALYSIS_PROMPT],
+                config=generation_config
+            )
+
+            # Safe text extraction
+            v_text = response.text
+            if not v_text or not v_text.strip():
+                raise Exception("Gemini returned an empty response")
+
+            v_text = v_text.strip()
+            # Strip markdown code fences if present (model may still wrap)
             if "```" in v_text:
                 parts = v_text.split("```")
                 v_text = parts[1] if len(parts) > 1 else parts[0]
                 if v_text.startswith("json"):
                     v_text = v_text[4:]
             v_text = v_text.strip()
-            
+
             return json.loads(v_text)
         except Exception as e:
             print(f"Gemini Analysis Error: {e}")
