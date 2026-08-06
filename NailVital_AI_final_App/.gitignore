@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# Android
+App/build/
+App/.gradle/
+App/app/build/
+App/local.properties
+.idea/
+.gradle/
+*.iml
+*.apk
+*.aab
+
+# OS generated files
+.DS_Store
+Thumbs.db

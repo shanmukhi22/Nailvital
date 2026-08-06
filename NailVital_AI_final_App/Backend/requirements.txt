@@ -86,3 +86,9 @@ psycopg2-binary==2.9.10
 ultralytics
 huggingface-hub
 opencv-python-headless
+selenium
+Appium-Python-Client
+pytest
+locust
+pandas
+openpyxl
