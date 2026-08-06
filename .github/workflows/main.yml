@@ -25,6 +25,9 @@ jobs:
         pip install -r "NailVital_AI_final_App/Backend/requirements.txt"
         
     - name: Run Backend API & Unit Tests
+      env:
+        GEMINI_API_KEY: "dummy_key"
+        GROQ_API_KEY: "dummy_key"
       run: |
         cd NailVital_AI_final_App/Backend
         pytest test_api_unit.py
