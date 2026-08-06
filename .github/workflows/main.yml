@@ -26,10 +26,12 @@ jobs:
         
     - name: Run Backend API & Unit Tests
       run: |
-        pytest "NailVital_AI_final_App/Backend/test_api_unit.py"
+        cd NailVital_AI_final_App/Backend
+        pytest test_api_unit.py
 
     - name: Run Selenium UI Tests
       run: |
-        python "NailVital_AI_final_App/Website/server.py" &
+        cd NailVital_AI_final_App
+        python Website/server.py &
         sleep 3
-        pytest "NailVital_AI_final_App/tests/ui_website/test_website_ui.py"
+        pytest tests/ui_website/test_website_ui.py
