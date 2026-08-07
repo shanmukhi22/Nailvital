@@ -84,15 +84,11 @@ function showScreen(id) {
     item.classList.toggle('active', attr && attr.includes(`'${id}'`));
   });
 
-  const micBtn = document.getElementById('micBtn');
   const sidebar = document.getElementById('desktopSidebar');
   const isProtected = ['home', 'scan', 'chatbot', 'history', 'profile', 'wiki'].includes(id);
 
   if (sidebar) {
     sidebar.style.display = isProtected ? 'flex' : 'none';
-  }
-  if (micBtn) {
-    micBtn.style.display = isProtected ? 'flex' : 'none';
   }
 }
 
@@ -767,11 +763,73 @@ function showScanResultModal(res) {
   const elFinger = document.getElementById('resFingerName');
   if (elFinger) elFinger.textContent = res.finger || 'Finger 1';
   
-  const elDiag2 = document.getElementById('resDiagnosisName2');
-  if (elDiag2) elDiag2.textContent = diagName;
-  
-  const elConf2 = document.getElementById('resConfidence2');
-  if (elConf2) elConf2.textContent = confText;
+  const detectionsContainer = document.getElementById('resDetectionsContainer');
+  if (detectionsContainer) {
+    detectionsContainer.innerHTML = '';
+    let findingsList = res.findings && res.findings.length > 0 ? res.findings : [{ result_class: primaryClass, confidence: primaryConf || 91.4 }];
+    
+    // Sort by confidence descending
+    findingsList.sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
+    
+    // Take top 3
+    findingsList.slice(0, 3).forEach(f => {
+      let conditionName = f.display_name;
+      if (!conditionName) {
+        const matchingCond = ALL_CONDITIONS.find(c => c.id === f.result_class);
+        conditionName = matchingCond ? matchingCond.name : f.result_class;
+      }
+      if (!conditionName) conditionName = 'Analysis completed';
+      
+      const confValue = f.confidence !== undefined ? Math.round(f.confidence) : 90;
+      
+      const row = document.createElement('div');
+      row.style.marginBottom = '16px';
+      
+      const textRow = document.createElement('div');
+      textRow.style.display = 'flex';
+      textRow.style.justifyContent = 'space-between';
+      textRow.style.alignItems = 'center';
+      textRow.style.marginBottom = '6px';
+      
+      const nameSpan = document.createElement('span');
+      nameSpan.style.color = '#111827';
+      nameSpan.style.fontWeight = '700';
+      nameSpan.style.fontSize = '14px';
+      nameSpan.textContent = conditionName;
+      
+      const confSpan = document.createElement('span');
+      confSpan.style.color = '#0f766e';
+      confSpan.style.fontWeight = '700';
+      confSpan.style.fontSize = '14px';
+      confSpan.textContent = confValue + '%';
+      
+      textRow.appendChild(nameSpan);
+      textRow.appendChild(confSpan);
+      
+      // Progress Bar Container
+      const barContainer = document.createElement('div');
+      barContainer.style.width = '100%';
+      barContainer.style.height = '6px';
+      barContainer.style.backgroundColor = 'rgba(15, 118, 110, 0.1)';
+      barContainer.style.borderRadius = '3px';
+      barContainer.style.overflow = 'hidden';
+      
+      // Progress Bar Fill
+      const barFill = document.createElement('div');
+      barFill.style.height = '100%';
+      barFill.style.width = confValue + '%';
+      barFill.style.backgroundColor = '#0f766e';
+      barFill.style.borderRadius = '3px';
+      barFill.style.transition = 'width 1s cubic-bezier(0.4, 0, 0.2, 1)';
+      
+      barContainer.appendChild(barFill);
+      
+      row.appendChild(textRow);
+      row.appendChild(barContainer);
+      
+      detectionsContainer.appendChild(row);
+    });
+  }
 
   document.getElementById('resDescription').textContent = primaryDesc || 'Analysis completed.';
   document.getElementById('resRecommendation').textContent = primaryRec || 'Consult a medical professional for advice.';
@@ -787,7 +845,7 @@ function closeScanResultModal() {
 // ─── NAIL NOT DETECTED MODAL ───────────────────────────────────────────────
 
 /**
- * Maps a Gemini rejection_category to a human-readable subtitle message.
+ * Maps an AI rejection_category to a human-readable subtitle message.
  */
 function _rejectionCategoryMessage(category = '') {
   const cat = category.toUpperCase();

@@ -312,17 +312,7 @@ p { color: var(--text-muted); font-size: 16px; line-height: 1.6; }
 }
 .chat-send:hover { transform: scale(1.05); }
 
-/* ─── GLOBAL MIC FAB ─── */
-.mic-fab {
-  position: fixed; bottom: 40px; right: 40px; z-index: 999;
-  width: 64px; height: 64px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-  transition: var(--transition);
-}
-.mic-fab:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6); }
-.mic-fab.listening { animation: pulseGlow 1.5s infinite; background: var(--status-error); }
+/* ─── GLOBAL MIC FAB REMOVED ─── */
 
 /* ─── UTILS & TOASTS ─── */
 .toast {
