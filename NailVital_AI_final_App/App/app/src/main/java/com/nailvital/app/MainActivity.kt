@@ -225,8 +225,6 @@ fun NailVitalApp() {
                         )
                     }
                 }
-
-                )
             }
         }
     
