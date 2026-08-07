@@ -39,18 +39,12 @@ import androidx.core.content.ContextCompat
 import com.nailvital.app.ui.screens.*
 
 class MainActivity : ComponentActivity() {
-
-
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             NailVitalApp()
         }
     }
-
 }
 
 @Composable
@@ -232,10 +226,6 @@ fun NailVitalApp() {
                     }
                 }
 
-                // Global Voice Feedback Overlay
-                VoiceOverlay(
-                    text = lastText,
-                    modifier = Modifier.align(Alignment.BottomCenter)
                 )
             }
         }
@@ -243,3 +233,16 @@ fun NailVitalApp() {
     }
 }
 
+
+
+@Composable
+fun NailVitalAITheme(content: @Composable () -> Unit) {
+    androidx.compose.material3.MaterialTheme(
+        colorScheme = androidx.compose.material3.darkColorScheme(
+            background = com.nailvital.app.ui.screens.DeepColor,
+            primary = com.nailvital.app.ui.screens.MintColor,
+            onPrimary = Color.Black
+        ),
+        content = content
+    )
+}
