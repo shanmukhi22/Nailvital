@@ -33,9 +33,11 @@ def generate_test_cases():
             
     df = pd.DataFrame(test_cases)
     
+    from openpyxl.styles import Font, PatternFill, Alignment
+
     # Save to current directory, separated by sheets
     output_file = "NailVital_Test_Cases_Sheets_Final.xlsx"
-    with pd.ExcelWriter(output_file) as writer:
+    with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
         for category in categories:
             # Filter the dataframe for the current category
             category_df = df[df['Category'] == category]
@@ -45,6 +47,28 @@ def generate_test_cases():
             
             # Write to the specific sheet
             category_df.to_excel(writer, sheet_name=sheet_name, index=False)
+
+            # Apply formatting
+            worksheet = writer.sheets[sheet_name]
+            
+            # Header formatting
+            header_fill = PatternFill(start_color="4F81BD", end_color="4F81BD", fill_type="solid")
+            header_font = Font(color="FFFFFF", bold=True)
+            
+            for cell in worksheet[1]:
+                cell.fill = header_fill
+                cell.font = header_font
+                cell.alignment = Alignment(horizontal='center', vertical='center')
+                
+            # Set column widths
+            column_widths = {'A': 15, 'B': 20, 'C': 70, 'D': 45, 'E': 30, 'F': 15}
+            for col, width in column_widths.items():
+                worksheet.column_dimensions[col].width = width
+                
+            # Text wrapping for all data cells
+            for row in worksheet.iter_rows(min_row=2, max_col=6):
+                for cell in row:
+                    cell.alignment = Alignment(vertical='top', wrap_text=True)
 
     print(f"Generated 1200 test cases successfully (300 per category on separate sheets) in {os.path.abspath(output_file)}")
 
