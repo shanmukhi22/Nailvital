@@ -34,7 +34,7 @@ def generate_test_cases():
     df = pd.DataFrame(test_cases)
     
     # Save to current directory, separated by sheets
-    output_file = "NailVital_Test_Cases_Sheets.xlsx"
+    output_file = "NailVital_Test_Cases_Sheets_Final.xlsx"
     with pd.ExcelWriter(output_file) as writer:
         for category in categories:
             # Filter the dataframe for the current category
