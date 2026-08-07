@@ -31,7 +31,6 @@ import com.nailvital.app.api.ApiClient
 import com.nailvital.app.api.ChatRequest
 import com.nailvital.app.api.SessionManager
 import kotlinx.coroutines.launch
-import com.nailvital.app.voice.VoiceState
 
 data class Message(
     val text: String,
@@ -45,9 +44,7 @@ fun ChatScreen(
     onNavigateToScan: () -> Unit,
     onNavigateToHistory: () -> Unit,
     onNavigateToProfile: () -> Unit,
-    onHomeClick: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onHomeClick: () -> Unit
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -69,30 +66,10 @@ fun ChatScreen(
         }
     }
 
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    val current = listState.firstVisibleItemIndex
-                    listState.animateScrollToItem(current + 5)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    val current = listState.firstVisibleItemIndex
-                    listState.animateScrollToItem(kotlin.math.max(0, current - 5))
-                }
-                else -> {}
-            }
-        }
-    }
 
     Scaffold(
         containerColor = iOSBg,
         floatingActionButton = {
-            VoiceFab(
-                voiceState = voiceState,
-                onMicClick = onVoiceMicClick
-            )
         },
         bottomBar = {
             BottomNavigationBar(

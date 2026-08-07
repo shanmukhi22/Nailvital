@@ -52,9 +52,6 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.style.TextAlign
 import kotlin.math.max
-import com.nailvital.app.voice.VoiceState
-import com.nailvital.app.voice.LocalVoiceActions
-import com.nailvital.app.voice.VoiceAction
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 
@@ -350,8 +347,6 @@ fun HistoryScreen(
     onNavigateToChat: () -> Unit,
     onNavigateToProfile: () -> Unit,
     onHomeClick: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {},
     initialExpandDisease: String? = null
 ) {
     val context = LocalContext.current
@@ -360,7 +355,6 @@ fun HistoryScreen(
     val scope = rememberCoroutineScope()
     
     val listState = rememberLazyListState()
-    val voiceActions = LocalVoiceActions.current
 
     var history by remember { mutableStateOf<List<ScanResponse>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
@@ -371,38 +365,6 @@ fun HistoryScreen(
     var scanToDelete by remember { mutableStateOf<ScanResponse?>(null) }
     var savedFilePath by remember { mutableStateOf<String?>(null) }
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is VoiceAction.GenerateReport -> {
-                    try {
-                        val token = sessionManager.fetchAuthToken()
-                        val response = ApiClient.instance.exportGlobalHistoryPdf("Bearer $token")
-                        if (response.isSuccessful && response.body() != null) {
-                            val fileName = "NailVital_Clinical_Report.pdf"
-                            val (success, resultMsg) = saveFileToDownloads(context, response.body()!!, fileName, "application/pdf")
-                            if (success) {
-                                savedFilePath = resultMsg
-                            } else {
-                                Toast.makeText(context, "Save error: $resultMsg", Toast.LENGTH_LONG).show()
-                            }
-                        } else {
-                            Toast.makeText(context, "Server export failed", Toast.LENGTH_SHORT).show()
-                        }
-                    } catch (e: Exception) { e.printStackTrace() }
-                }
-                is VoiceAction.ScrollDown -> {
-                    val currentIndex = listState.firstVisibleItemIndex
-                    listState.animateScrollToItem(currentIndex + 2)
-                }
-                is VoiceAction.ScrollUp -> {
-                    val currentIndex = listState.firstVisibleItemIndex
-                    listState.animateScrollToItem(kotlin.math.max(0, currentIndex - 2))
-                }
-                else -> {}
-            }
-        }
-    }
 
     suspend fun loadHistory() {
         try {
@@ -448,10 +410,6 @@ fun HistoryScreen(
     Scaffold(
         containerColor = iOSBg,
         floatingActionButton = {
-            VoiceFab(
-                voiceState = voiceState,
-                onMicClick = onVoiceMicClick
-            )
         },
         bottomBar = {
             BottomNavigationBar(

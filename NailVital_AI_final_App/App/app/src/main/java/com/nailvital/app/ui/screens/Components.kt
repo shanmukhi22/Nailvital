@@ -43,7 +43,6 @@ import java.io.File
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import androidx.compose.ui.graphics.graphicsLayer
-import com.nailvital.app.voice.VoiceState
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.IntOffset
@@ -398,11 +397,7 @@ fun Modifier.shimmerEffect(): Modifier = composed {
 // ═══════════════════════════════════════════════════
 
 @Composable
-fun VoiceFab(
-    voiceState: VoiceState,
-    onMicClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
+ {
     val haptic = androidx.compose.ui.platform.LocalHapticFeedback.current
 
     // Drag offset — starts at (0,0) relative to initial placement
@@ -438,8 +433,6 @@ fun VoiceFab(
         label = "drag_scale"
     )
 
-    val isListening = voiceState == VoiceState.LISTENING
-    val isProcessing = voiceState == VoiceState.PROCESSING || voiceState == VoiceState.SPEAKING
 
     Box(
         modifier = modifier

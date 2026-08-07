@@ -44,16 +44,13 @@ import com.nailvital.app.api.UserResponse
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
 import java.io.File
-import com.nailvital.app.voice.VoiceState
 
 @Composable
 fun ProfileScreen(
     onBack: () -> Unit,
     onLogout: () -> Unit,
     onNavigateToPersonalDetails: () -> Unit,
-    onNavigateToChangePassword: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onNavigateToChangePassword: () -> Unit
 ) {
     val context = LocalContext.current
     val sessionManager = remember { SessionManager(context) }
@@ -89,29 +86,11 @@ fun ProfileScreen(
     }
 
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 500)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 500))
-                }
-                else -> {}
-            }
-        }
-    }
 
     Scaffold(
         containerColor = iOSBg,
         floatingActionButton = {
-            VoiceFab(
-                voiceState = voiceState,
-                onMicClick = onVoiceMicClick
-            )
         },
         bottomBar = {
             BottomNavigationBar(
@@ -434,9 +413,7 @@ fun ProfileScreen(
 @Composable
 fun PersonalDetailsScreen(
     onBack: () -> Unit,
-    onUpdateSuccess: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onUpdateSuccess: () -> Unit
 ) {
     val context = LocalContext.current
     val sessionManager = remember { SessionManager(context) }
@@ -477,21 +454,7 @@ fun PersonalDetailsScreen(
     }
 
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 500)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 500))
-                }
-                else -> {}
-            }
-        }
-    }
 
     Box(modifier = Modifier.fillMaxSize()) {
     Column(
@@ -583,13 +546,6 @@ fun PersonalDetailsScreen(
             }
         }
     } // end Column
-    VoiceFab(
-        voiceState = voiceState,
-        onMicClick = onVoiceMicClick,
-        modifier = Modifier
-            .align(Alignment.BottomEnd)
-            .padding(end = 24.dp, bottom = 32.dp)
-    )
     } // end Box
 }
 
@@ -709,9 +665,7 @@ fun SettingsToggleItem(
 @Composable
 fun ChangePasswordScreen(
     onBack: () -> Unit,
-    onChangeSuccess: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onChangeSuccess: () -> Unit
 ) {
     val context = LocalContext.current
     val sessionManager = remember { SessionManager(context) }
@@ -725,21 +679,7 @@ fun ChangePasswordScreen(
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 500)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 500))
-                }
-                else -> {}
-            }
-        }
-    }
 
     Box(modifier = Modifier.fillMaxSize()) {
     Column(
@@ -852,13 +792,6 @@ fun ChangePasswordScreen(
             Spacer(modifier = Modifier.height(40.dp))
         }
     } // end Column
-    VoiceFab(
-        voiceState = voiceState,
-        onMicClick = onVoiceMicClick,
-        modifier = Modifier
-            .align(Alignment.BottomEnd)
-            .padding(end = 24.dp, bottom = 32.dp)
-    )
     } // end Box
 }
 

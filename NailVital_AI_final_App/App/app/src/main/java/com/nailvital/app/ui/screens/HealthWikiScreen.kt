@@ -18,7 +18,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nailvital.app.voice.VoiceState
 
 data class WikiEntry(
     val conditionKey: String,
@@ -28,9 +27,7 @@ data class WikiEntry(
 
 @Composable
 fun HealthWikiScreen(
-    onBack: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onBack: () -> Unit
 ) {
     val context = LocalContext.current
     val langManager = remember { LanguageManager(context) }
@@ -62,10 +59,6 @@ fun HealthWikiScreen(
     Scaffold(
         containerColor = iOSBg,
         floatingActionButton = {
-            VoiceFab(
-                voiceState = voiceState,
-                onMicClick = onVoiceMicClick
-            )
         }
     ) { padding ->
         Column(
@@ -135,23 +128,7 @@ fun HealthWikiScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             val listState = androidx.compose.foundation.lazy.rememberLazyListState()
-            val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-            androidx.compose.runtime.LaunchedEffect(voiceActions) {
-                voiceActions?.collect { action ->
-                    when (action) {
-                        is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                            val current = listState.firstVisibleItemIndex
-                            listState.animateScrollToItem(current + 4)
-                        }
-                        is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                            val current = listState.firstVisibleItemIndex
-                            listState.animateScrollToItem(kotlin.math.max(0, current - 4))
-                        }
-                        else -> {}
-                    }
-                }
-            }
 
             // Wiki List
             LazyColumn(

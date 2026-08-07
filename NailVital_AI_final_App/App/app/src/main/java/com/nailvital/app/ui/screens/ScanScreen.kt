@@ -36,9 +36,6 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import androidx.core.content.ContextCompat
 import retrofit2.HttpException
-import com.nailvital.app.voice.VoiceState
-import com.nailvital.app.voice.LocalVoiceActions
-import com.nailvital.app.voice.VoiceAction
 import androidx.compose.runtime.LaunchedEffect
 import com.nailvital.app.api.Finding
 import com.nailvital.app.api.ScanResponse
@@ -174,8 +171,6 @@ private fun rejectionCategoryMessage(category: String): String {
 fun ScanScreen(
     onBack: () -> Unit,
     onScanComplete: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {},
     onSpeak: (String) -> Unit = {}
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
@@ -192,7 +187,6 @@ fun ScanScreen(
     )
 
     val scrollState = rememberScrollState()
-    val voiceActions = LocalVoiceActions.current
     val scope = rememberCoroutineScope()
     val sessionManager = remember { com.nailvital.app.api.SessionManager(context) }
     
@@ -287,29 +281,6 @@ fun ScanScreen(
         }
     }
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 400)
-                }
-                is VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(max(0, scrollState.value - 400))
-                }
-                is VoiceAction.TakePhoto -> {
-                    showGuideDialog = true 
-                    onSpeak("Please ensure a well-lit environment and focus directly on the nails. Say 'Continue' when you are ready to upload.")
-                }
-                is VoiceAction.Continue -> {
-                    if (showGuideDialog) {
-                        showGuideDialog = false
-                        galleryLauncher.launch("image/*")
-                    }
-                }
-                else -> {}
-            }
-        }
-    }
 
     Box(modifier = Modifier.fillMaxSize()) {
     Column(
@@ -707,12 +678,5 @@ fun ScanScreen(
     } // end Column
 
     // Voice FAB overlay (bottom-right, above the control panel)
-    VoiceFab(
-        voiceState = voiceState,
-        onMicClick = onVoiceMicClick,
-        modifier = Modifier
-            .align(Alignment.BottomEnd)
-            .padding(end = 24.dp, bottom = 120.dp)
-    )
     } // end Box
 }

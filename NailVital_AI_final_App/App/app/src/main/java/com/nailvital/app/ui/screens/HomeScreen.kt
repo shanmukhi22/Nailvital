@@ -38,7 +38,6 @@ import com.nailvital.app.api.ScanResponse
 import com.nailvital.app.api.SessionManager
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.async
-import com.nailvital.app.voice.VoiceState
 
 data class HealthSignal(
     val icon: androidx.compose.ui.graphics.vector.ImageVector,
@@ -54,9 +53,7 @@ fun HomeScreen(
     onNavigateToChat: () -> Unit,
     onNavigateToProfile: () -> Unit,
     onNavigateToHistory: () -> Unit,
-    onNavigateToWiki: () -> Unit = {},
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onNavigateToWiki: () -> Unit = {}
 ) {
     val context = LocalContext.current
     val langManager = remember { LanguageManager(context) }
@@ -71,24 +68,7 @@ fun HomeScreen(
     var showGuestBanner by remember { mutableStateOf(true) }
     var showHelpDialog by remember { mutableStateOf(false) }
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 500)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 500))
-                }
-                is com.nailvital.app.voice.VoiceAction.GoAbout -> {
-                    showHelpDialog = true
-                }
-                else -> {}
-            }
-        }
-    }
 
     val lifecycleOwner = LocalLifecycleOwner.current
     DisposableEffect(lifecycleOwner) {
@@ -177,10 +157,6 @@ fun HomeScreen(
     Scaffold(
         containerColor = iOSBg,
         floatingActionButton = {
-            VoiceFab(
-                voiceState = voiceState,
-                onMicClick = onVoiceMicClick
-            )
         },
         bottomBar = {
             BottomNavigationBar(

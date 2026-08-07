@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.sp
 import com.nailvital.app.api.ApiClient
 import com.nailvital.app.api.SessionManager
 import kotlinx.coroutines.launch
-import com.nailvital.app.voice.VoiceState
 
 @Composable
 fun LoginScreen(
@@ -32,29 +31,10 @@ fun LoginScreen(
     onNavigateToForgot: () -> Unit,
     onLoginSuccess: () -> Unit,
     onBack: () -> Unit,
-    onGuestLogin: () -> Unit = {},
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onGuestLogin: () -> Unit = {}
 ) {
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 400)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 400))
-                }
-                is com.nailvital.app.voice.VoiceAction.LoginGuest -> {
-                    onGuestLogin()
-                }
-                else -> {}
-            }
-        }
-    }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
@@ -196,26 +176,10 @@ fun LoginScreen(
 fun RegisterScreen(
     onNavigateToLogin: () -> Unit,
     onNavigateToOtp: (String) -> Unit,
-    onBack: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onBack: () -> Unit
 ) {
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 400)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 400))
-                }
-                else -> {}
-            }
-        }
-    }
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var phone by remember { mutableStateOf("") }
@@ -692,26 +656,10 @@ fun OtpScreen(
 @Composable
 fun ForgotPasswordScreen(
     onNavigateToReset: (String) -> Unit,
-    onBack: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onBack: () -> Unit
 ) {
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 400)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 400))
-                }
-                else -> {}
-            }
-        }
-    }
 
     var email by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
@@ -802,26 +750,10 @@ fun ForgotPasswordScreen(
 fun ResetPasswordScreen(
     email: String,
     onResetSuccess: () -> Unit,
-    onBack: () -> Unit,
-    voiceState: VoiceState = VoiceState.IDLE,
-    onVoiceMicClick: () -> Unit = {}
+    onBack: () -> Unit
 ) {
     val scrollState = rememberScrollState()
-    val voiceActions = com.nailvital.app.voice.LocalVoiceActions.current
 
-    LaunchedEffect(voiceActions) {
-        voiceActions?.collect { action ->
-            when (action) {
-                is com.nailvital.app.voice.VoiceAction.ScrollDown -> {
-                    scrollState.animateScrollTo(scrollState.value + 400)
-                }
-                is com.nailvital.app.voice.VoiceAction.ScrollUp -> {
-                    scrollState.animateScrollTo(kotlin.math.max(0, scrollState.value - 400))
-                }
-                else -> {}
-            }
-        }
-    }
 
     var otp by remember { mutableStateOf("") }
     var newPassword by remember { mutableStateOf("") }
