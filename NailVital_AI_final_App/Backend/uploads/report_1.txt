@@ -1,0 +1,12 @@
+
+    NAILVITAL AI - HEALTH REPORT
+    ---------------------------
+    Name: Ram Srinivas 
+    Email: gummasrinivas8106@gmail.com
+    Age: None
+    Gender: None
+    Height: None
+    Report Date: 2026-03-24 20:09:12
+    
+    Scan History count: 0
+    
